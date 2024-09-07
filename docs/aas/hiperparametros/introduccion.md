@@ -1,0 +1,4 @@
+# Introducción
+En el aprendizaje automático, tenemos dos tipos de parámetros: los parámetros que se aprenden de los datos de entrenamiento (por ejemplo, los pesos en una regresión logística) y los parámetros del algoritmo de aprendizaje que se optimizan por separado, también llamados parámetros de ajuste o hiperparámetros del modelo (por ejemplo el parámetro de regularización en la regresión logística o el parámetro de profundidad máxima de un árbol de decisión).
+
+En esta sección utilizaremos distintas técnicas que nos permitirán ajustar estos hiperparámetros con el objetivo de optimizar el rendimiento de nuestros modelos.

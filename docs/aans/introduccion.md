@@ -1,0 +1,9 @@
+# Introducción
+La mayoría de las aplicaciones del *machine learning* se basan hoy en día en el aprendizaje supervisado, la inmensa mayoría de los datos disponibles no está etiquetados.
+
+Las tareas más comunes del aprendizaje no supervisado son las siguientes:
+
+- **Reducción de la dimensionalidad**. Utiliza distintas técnicas de extracción de características para reducir el número de características de un conjunto de datos. Además de acelerar el entrenamiento, la reducción de la dimensionalidad resulta muy útil para la visualización de datos.
+- **Clustering**. Consiste en juntar instancias simulares en grupos. El agrupamiento es una herramienta estupenda para el análisis de datos, la segmentación de mercado, los sistemas de recomendación, los motores de búsqueda, la segmentación de imágenes, el aprendizaje semisupervisado, la reducción de la dimensionalidad.
+- **Detección de anomalías**. El objetivo es aprender qué aspecto tienen los datos "normales" y, después, utilizar eso para detectar instancias anormales. Estas instancias se llaman anomalías o valores atípicos, mientras que las instancias normales se llaman valores típicos o *inliers*. La detección de anomalías es útil para una gran variedad de aplicaciones, como la detección de fraudes, la detección de productos defectuosos en la fabricación, la identificación de tendencias nuevas en series temporales o la eliminación de valores atípicos de un conjunto de datoas antes de entrenar otro modelo, lo cual puede mejorar de forma significativa el rendimiento del modelo resultante.
+- **Estimación de densidad**. Es la tarea de estimar la funcón de densidad de probabilidad del proceso aleatorio que ha generado el conjunto de datos. La estimación de densidad se utiliza con frecuencia para la detección de anomalías: es probable que las instancias ubicadas en regiones de densidad muy baja sean anomalías. También resulta útil para la visualizació y el análisis de datos.

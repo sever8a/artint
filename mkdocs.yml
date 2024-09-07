@@ -1,0 +1,117 @@
+site_name: Inteligencia Artificial
+site_url: ""
+site_dir: ../site
+docs_dir: docs
+use_directory_urls: false
+theme:
+  language: es
+  favicon: images/favicon.jpeg
+  name: material
+  palette:
+    primary: light blue
+    accent: "Teal"
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: images/favicon.jpeg
+  features:
+    - header.autohide
+
+nav:
+  - "index.md"
+  - 1. Hola IA.: 
+    - Introducción a la inteligencia artificial: 
+      - Introducción: "ia/introduccion/introduccion.md"
+      - Definición de IA: "ia/introduccion/definicion.md"
+      - Clases de IA: "ia/introduccion/clases.md"
+      - Historia de la IA: "ia/introduccion/historia.md"
+      - Campos de la IA: "ia/introduccion/campos.md"
+    - Modelos de inteligencia artificial:
+      - Introducción: "ia/modelos/introduccion.md"
+      - Sistemas de resolución de problemas: "ia/modelos/problemas.md"
+      - Sistemas basados en reglas. Sistemas expertos: "ia/modelos/expertos.md"
+      - Sistemas de razonamiento impreciso: "ia/modelos/impreciso.md"
+      - Sistemas de aprendizaje automático. Machine Learning: "ia/modelos/machine.md"
+    - Tipos de sistemas de aprendizaje automático:
+      - Introducción: "ia/tipos_aa/introduccion.md"
+      - Supervisión del entrenamiento: "ia/tipos_aa/supervision.md"
+      - Aprendizaje por lotes frente a aprendizaje online: "ia/tipos_aa/lotes.md"
+      - Aprendizaje basado en instancias frente a basado en modelos: "ia/tipos_aa/instancias.md"
+    - Fases de un sistema de aprendizaje automático:
+      - Introducción: "ia/fases_aa/introduccion.md"
+      - Preprocesamiento: "ia/fases_aa/preprocesamiento.md"
+      - Entrenamiento y selección de modelos: "ia/fases_aa/entrenamiento.md"
+      - Evaluación de modelos y pronósticos de instancias: "ia/fases_aa/evaluacion.md"
+  - 2. Aprendizaje automático supervisado:
+    - Algoritmos:
+      - Introducción: "aas/algoritmos/introduccion.md"
+      - Algoritmos de clasificación: "aas/algoritmos/clasificacion.md"
+      - Algoritmos de regresión: "aas/algoritmos/regresion.md"
+    - Validación de modelos:
+      - Introducción: "aas/validacion/introduccion.md"
+      - Métricas para modelos de regresión: "aas/validacion/met_regresion.md"
+      - Métricas para modelos de clasificación: "aas/validacion/met_clasificacion.md"
+    - Partición de datasets:
+      - Introducción: "aas/particion/introduccion.md"
+      - Método de retención: "aas/particion/retencion.md"
+      - Validación cruzada de k grupos: "aas/particion/crossvalidation.md"
+    - Ajuste de hiperparámetros:
+      - Introducción: "aas/hiperparametros/introduccion.md"
+      - Curvas de aprendizaje y validación: "aas/hiperparametros/curvas.md"
+      - Búsqueda en la red: "aas/hiperparametros/red.md"
+    - Ensamblaje de modelos:
+      - Introducción: "aas/ensamblaje/introduccion.md"
+      - Métodos por votación: "aas/ensamblaje/votacion.md"
+      - Bagging y pasting: "aas/ensamblaje/bagging.md"
+      - Boosting: "aas/ensamblaje/boosting.md"
+  - 3. MLOps:
+    - Introducción: "mlops/introduccion.md"
+    - Ciclo de vida: "mlops/ciclo.md"
+    - Fase de diseño: "mlops/disenyo.md"
+    - Fase de desarrollo: "mlops/desarrollo.md"
+    - Fase de despliegue: "mlops/despliegue.md"
+    - Herramientas: "mlops/herramientas.md"
+    - Weight & Biases: "mlops/wandb.md"
+  - 4. Aprendizaje no supervisado:
+    - Introducción: "aans/introduccion.md"
+    - Clustering:
+      - Introducción: "aans/clustering/introduccion.md"
+      - Agrupamiento basado en prototipos: "aans/clustering/kmeans.md"
+      - Agrupamiento jerárquico: "aans/clustering/jerarquico.md"
+      - Agrupamiento basado en regiones de alta densidad: "aans/clustering/dbscan.md"
+    - Reducción de la dimensionalidad: 
+      - Introducción: "aans/dimensionalidad/dimensionalidad.md"
+      - Proyección: "aans/dimensionalidad/proyeccion.md"
+      - Aprendizaje de variedades: "aans/dimensionalidad/variedades.md"
+    - Detección de anomalías:
+      - Introducción: "aans/anomalias/introduccion.md"
+      - Isolation Forest: "aans/anomalias/iforest.md"
+      - Local Outlier Factor: "aans/anomalias/lof.md"
+  - 5. Redes neuronales: 
+    - Introducción: "redes-neuronales/introduccion.md"
+    - Perceptrón: "redes-neuronales/perceptron.md"
+    - Redes neuronales multicapa: "redes-neuronales/multicapa.md"
+    - Redes neuronales multicapa de regresión: "redes-neuronales/regresion.md"
+    - Redes neuronales multicapa de clasificación: "redes-neuronales/clasificacion.md"
+  - 6. Visión por computador:
+    - Introducción: "computer-vision/introduccion.md"
+    - Redes convolucionales: "computer-vision/convolucionales.md"
+    - Transformación de imágenes y aumento de datos: "computer-vision/aumento.md"
+    - Transformadores de visión: "computer-vision/vit.md"
+    - Reconocimiento de objetos: "computer-vision/recognition.md"
+    - Segmentación de objetos: "computer-vision/segmentation.md"
+
+extra:
+  search:
+    language: "es"
+
+plugins: []
+
+extra_javascript:
+  - javascripts/katex.js 
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+ 
