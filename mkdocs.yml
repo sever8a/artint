@@ -28,7 +28,8 @@ nav:
     - Campos de la IA: "ia/introduccion/campos.md"
   - Modelos de inteligencia artificial:
     - Introducción: "ia/modelos/introduccion.md"
-    - Sistemas de resolución de problemas: "ia/modelos/problemas.md"     - Sistemas basados en reglas. Sistemas expertos: "ia/modelos/expertos.md"
+    - Sistemas de resolución de problemas: "ia/modelos/problemas.md"     
+    - Sistemas basados en reglas. Sistemas expertos: "ia/modelos/expertos.md"
     - Sistemas de razonamiento impreciso: "ia/modelos/impreciso.md"
     - Sistemas de aprendizaje automático. Machine Learning: "ia/modelos/machine.md"
     - Tipos de sistemas de aprendizaje automático:
