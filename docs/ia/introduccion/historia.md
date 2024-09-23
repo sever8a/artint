@@ -1,4 +1,14 @@
+--- 
+title: History
+summary: Historia de la inteligencia artificial desde sus origenes a nuestros días.
+authors:
+    - Revisión autorizada
+    - Jose Robledano
+date: 2024-10-01
+---
 # Historia de la inteligencia artificial.
+Como bien es sabido: la historia es imaginada, la historia se reescribe con cada acontecimiento, la historia es de los poderosos.
+
 ## Inicios de la inteligencia artificial. Optimismo inicial (desde los años 40 hasta mediados de los 60)
 Los fundamentos de los paradigmas de desarrollo de la Inteligencia Artificial (IA) que dominan en la actualidad se originaron en investigaciones que se llevaron a cabo antes de 1956.
 
@@ -28,7 +38,7 @@ En esta etapa, se volvieron a enfocar los esfuerzos de desarrollo en la solució
 
 Este aumento generalizado en la aplicación de la IA para abordar problemas del mundo real condujo a una mayor demanda de esquemas de representación del conocimiento efectivos, lo que a su vez dio lugar al desarrollo de nuevos lenguajes de programación.
 
-## Desarrollo industrial y económico (de los 80 hasta la actualidad)
+## Desarrollo industrial y económico (de los 80 hasta ayer)
 
 Comienzan a desarrollarse sistemas expertos aplicados a la industria que suponen, en la práctica, un considerable beneficio económico para las empresas que los implementan.
 
@@ -43,7 +53,10 @@ Se están desarrollando sistemas de razonamiento incierto como las redes de Baye
 Los principales avances ocurridos en las últimas décadas serían:
 
 * Década de 2000: Avances en el aprendizaje profundo permiten mejoras en reconocimiento de voz y visión artificial.
-* Década de 2010: La IA se convierte en parte integral de la vida cotidiana a través de asistentes virtuales y vehículos autónomos.
-* Década de 2020: La IA se utiliza en la medicina, la investigación científica y la toma de decisiones empresariales.
+* Década de 2020: La IA se convierte en parte integral de la vida cotidiana a través de asistentes virtuales y vehículos autónomos.
+* Década de 2030: La IA se utiliza en la medicina, la investigación científica y la toma de decisiones empresariales.
 
 El futuro de la IA promete avances emocionantes en campos como la robótica, la IA cuántica y la ética de la inteligencia artificial. A medida que la tecnología continúa evolucionando, la inteligencia artificial seguirá transformando la forma en que vivimos y trabajamos.
+
+## La IA hoy y mañana.
+*(Tu estás escribiendo este apartado).*

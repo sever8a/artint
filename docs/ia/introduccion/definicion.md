@@ -1,3 +1,11 @@
+--- 
+title: Qué es la inteligencia
+summary: Qué es Inteligencia Artificial y que no lo es.
+authors:
+    - Revisión autorizada
+    - Jose Robledano
+date: 2024-10-01
+---
 # Definición de inteligencia artificial. 
 La Inteligencia Artificial (IA), al igual que la humana, es un concepto complejo de definir. Aún no existe una definición formal y universalmente aceptada.
 

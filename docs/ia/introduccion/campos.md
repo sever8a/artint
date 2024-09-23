@@ -1,3 +1,11 @@
+--- 
+title: Usos
+summary: Los usos son múltiples, pero es necesario afinar la imaginación y la inventiva para ampliar sus posibilidades.
+authors:
+    - Revisión autorizada
+    - Jose Robledano
+date: 2024-10-01
+---
 # Campos de aplicación de la inteligencia de artificial.
 A continuación, vamos a entrar en detalle en los distintos campos de aplicación de la inteligencia artificial.
 
