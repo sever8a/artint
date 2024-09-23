@@ -20,23 +20,23 @@ theme:
 nav:
   - "index.md"
   - 1. Resuelve problemas con IA.: 
-  - Introducción a la inteligencia artificial: 
-    - Introducción: "ia/introduccion/introduccion.md"
-    - Definición de IA: "ia/introduccion/definicion.md"
-    - Clases de IA: "ia/introduccion/clases.md"
-    - Historia de la IA: "ia/introduccion/historia.md"
-    - Campos de la IA: "ia/introduccion/campos.md"
-  - Modelos de inteligencia artificial:
-    - Introducción: "ia/modelos/introduccion.md"
-    - Sistemas de resolución de problemas: "ia/modelos/problemas.md"     
-    - Sistemas basados en reglas. Sistemas expertos: "ia/modelos/expertos.md"
-    - Sistemas de razonamiento impreciso: "ia/modelos/impreciso.md"
-    - Sistemas de aprendizaje automático. Machine Learning: "ia/modelos/machine.md"
-    - Tipos de sistemas de aprendizaje automático:
-      - Introducción: "ia/tipos_aa/introduccion.md"
-      - Supervisión del entrenamiento: "ia/tipos_aa/supervision.md"
-      - Aprendizaje por lotes frente a aprendizaje online: "ia/tipos_aa/lotes.md"
-      - Aprendizaje basado en instancias frente a basado en modelos: "ia/tipos_aa/instancias.md"
+    - Introducción a la inteligencia artificial: 
+      - Introducción: "ia/introduccion/introduccion.md"
+      - Definición de IA: "ia/introduccion/definicion.md"
+      - Clases de IA: "ia/introduccion/clases.md"
+      - Historia de la IA: "ia/introduccion/historia.md"
+      - Campos de la IA: "ia/introduccion/campos.md"
+    - Modelos de inteligencia artificial:
+      - Introducción: "ia/modelos/introduccion.md"
+      - Sistemas de resolución de problemas: "ia/modelos/problemas.md"     
+      - Sistemas basados en reglas. Sistemas expertos: "ia/modelos/expertos.md"
+      - Sistemas de razonamiento impreciso: "ia/modelos/impreciso.md"
+      - Sistemas de aprendizaje automático. Machine Learning: "ia/modelos/machine.md"
+      - Tipos de sistemas de aprendizaje automático:
+        - Introducción: "ia/tipos_aa/introduccion.md"
+        - Supervisión del entrenamiento: "ia/tipos_aa/supervision.md"
+        - Aprendizaje por lotes frente a aprendizaje online: "ia/tipos_aa/lotes.md"
+        - Aprendizaje basado en instancias frente a basado en modelos: "ia/tipos_aa/instancias.md"
     - Fases de un sistema de aprendizaje automático:
       - Introducción: "ia/fases_aa/introduccion.md"
       - Preprocesamiento: "ia/fases_aa/preprocesamiento.md"
