@@ -19,19 +19,18 @@ theme:
 
 nav:
   - "index.md"
-  - 1. Hola IA.: 
-    - Introducción a la inteligencia artificial: 
-      - Introducción: "ia/introduccion/introduccion.md"
-      - Definición de IA: "ia/introduccion/definicion.md"
-      - Clases de IA: "ia/introduccion/clases.md"
-      - Historia de la IA: "ia/introduccion/historia.md"
-      - Campos de la IA: "ia/introduccion/campos.md"
-    - Modelos de inteligencia artificial:
-      - Introducción: "ia/modelos/introduccion.md"
-      - Sistemas de resolución de problemas: "ia/modelos/problemas.md"
-      - Sistemas basados en reglas. Sistemas expertos: "ia/modelos/expertos.md"
-      - Sistemas de razonamiento impreciso: "ia/modelos/impreciso.md"
-      - Sistemas de aprendizaje automático. Machine Learning: "ia/modelos/machine.md"
+  - 1. Resuelve problemas con IA.: 
+  - Introducción a la inteligencia artificial: 
+    - Introducción: "ia/introduccion/introduccion.md"
+    - Definición de IA: "ia/introduccion/definicion.md"
+    - Clases de IA: "ia/introduccion/clases.md"
+    - Historia de la IA: "ia/introduccion/historia.md"
+    - Campos de la IA: "ia/introduccion/campos.md"
+  - Modelos de inteligencia artificial:
+    - Introducción: "ia/modelos/introduccion.md"
+    - Sistemas de resolución de problemas: "ia/modelos/problemas.md"     - Sistemas basados en reglas. Sistemas expertos: "ia/modelos/expertos.md"
+    - Sistemas de razonamiento impreciso: "ia/modelos/impreciso.md"
+    - Sistemas de aprendizaje automático. Machine Learning: "ia/modelos/machine.md"
     - Tipos de sistemas de aprendizaje automático:
       - Introducción: "ia/tipos_aa/introduccion.md"
       - Supervisión del entrenamiento: "ia/tipos_aa/supervision.md"
