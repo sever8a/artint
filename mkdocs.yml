@@ -13,7 +13,7 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  logo: images/favicon.jpeg
+  logo: images/favicon_iabd.ico
   features:
     - header.autohide
 

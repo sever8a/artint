@@ -4,7 +4,7 @@ summary: Se puede casificar por diferentes criterios, en muchas casos filosófic
 authors:
     - Revisión autorizada
     - Jose Robledano
-date: 2024-10-01
+date: 2024-10-19
 ---
 # Clases de inteligencia artificial.
 Se escriben muchas exageraciones acerca de la inteligencia artificial en los medios de comunicación. Una de las razones es que con "inteligencia artificial" se expresan muchas cosas, pero podríamos destacar dos de ellas, dos ideas separadas que se refieren a cosas muy diferentes.
@@ -12,6 +12,16 @@ Se escriben muchas exageraciones acerca de la inteligencia artificial en los med
 Por un lado, casi todo el progreso que estamos viendo en la inteligencia artificial se agrupa en lo que se denomina **inteligencia artificial débil** (*Narrow Artificial Intelligence*). Pero con inteligencia artificial también nos referimos a un segundo concepto, nombrado **inteligencia artificial fuerte** (*General Artificial Intelligence*). Este tipo de inteligencia es aquella que considera que las máquinas pueden hacer cualquier cosa que un humano pueda hacer, o ser superinteligentes y hacer incluso más cosas.
 
 Si bien hay muchos progresos en el área de la inteligencia artificial débil, no hay casi ninguno en lo que se refiere a la inteligencia artificial fuerte. Pero el rápido progreso en la inteligencia artificial débil, que es increíblemente valioso, ha hecho que los medios de comunicación a veces concluyan que hay mucho progreso también en la fuerte, lo cual no es cierto en estos momentos. La inteligencia artificial fuerte es un ámbito en el que los investigadores pueden trabajar, pero en el que se está aún muy lejos de conseguir un gran conocimiento; pueden pasar décadas o cientos de años, quién sabe.
+
+Posiblemente para facilitar la aproximación entre estas dos clases de Inteligencia Artificial, se está rediseñando los límites entre una y otra, para flexibilizar esta transición. Ahora se tiende a definir la **ANI** (*Artificial Narrow Intelligence*), centrada en la solución de problemas específicos y concretos, que demanera aislada permiten obtener soluciones a los problemas que se pretenden resolver.
+
+El propósito es *estrechar* más el ámbito de esta clase de Inteligencia Artificial.
+
+Se redefine el concepto de **AGI** (*Artificial General Intelligence*), que se ubicca en el concepto de aprendizaje que puede tener una Inteligencia Artificial, para poder relacionar otros conocimientos y desarrollar un *entendimiento* del concepto. En definitiva se atribuye la capacidad de desarrollar razonamientos no entrenados específicamente.
+
+Amplia y acota la posibilidad de utilizar Inteligencias Artificiales multipropósito, de manera que puedan ser utilizadas para aportar soluciones en problemas distintos a los especificos de su aprendizaje. Esto aún no se ha logrado, pero la primera aproximación pretende que la Inteligencia Artificial tenga capacidad de razonamiento.
+
+La tercera clase es la **ASI** (*Artificial Superintelligence*), de nuevo se situa como un nivel de conocimiento superior a la del ser humano, próxima a todas las protagonistas de historias de ciencia ficción. 
 
 Un ejemplo. Incluso un niño de tres años puede aprender cosas de una manera que las computadoras también pueden hacer por ahora; una niño de tres años en realidad domina la física intuitivamente. Por ejemplo, sabe perfectamente que cuando tira una bola al aire esta caerá. O cuando derrama algunos líquidos espera el desastre resultante. Sus padres no necesitan enseñarle las leyes de Newton, o hablarle de las ecuaciones diferenciales que definen la trayectoria de los objetos; este niño descubre todas estas cosas solo, pero supervisado por los eventos que ocurren en su contexto y ha percibido con sus sentidos durante esos 5 años de vida.
 
