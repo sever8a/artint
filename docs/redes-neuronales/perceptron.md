@@ -29,9 +29,22 @@ $$
     <figcaption>ULU</figcaption>
 </figure>
 
-Una sola ULU puede servir para clasificaciones binarias lineales simples. Calcula una función lineal de sus entradas y, si el resultado supera un umbral, da como salida la clase positiva. En caso contrario, genera la clase negativa. Podríamos usar una sola ULU para clasificar iris basándonos en la longitud y la anchura del pétalo. Entrenar una ULU así requeriría encontrar los valores adecuados para $ w_1, w_2 $ y $ b $.
+Una sola ULU puede servir para clasificaciones binarias lineales simples. Calcula una función lineal de sus entradas y, si el resultado supera un umbral, da como salida la clase positiva. 
 
-Un perceptrón consta de una o más ULU organizadas en una sola capa, donde todas las ULU se conectan a todas las entradas. Una capa así se denomina **capa completamente conectada** o **densa**. Las entradas constituyen la capa de entrada. Y, como la capa de ULU produce las salidas finales, se denomina la capa de salida. La siguiente figura muestra un perceptrón con dos entradas y tres salidas. Este perceptrón puede clasificar instancias simultáneamente en tres clases binarias diferentes, lo que lo convierte en un clasificador multietiqueta. También puede usarse para la clasificación multiclase.
+En caso contrario, genera la clase negativa. 
+
+!!! info "Practica"
+    Con una sola ULU para clasificar iris basada en la longitud y la anchura del pétalo. 
+    
+    Entrenar una ULU así requeriría encontrar los valores adecuados para $ w_1, w_2 $ y $ b $.
+
+Un perceptrón consta de una o más ULU organizadas en una sola capa, donde todas las ULU se conectan a todas las entradas. 
+
+Una capa así se denomina **capa completamente conectada** o **densa**. 
+
+Las entradas constituyen la capa de entrada. Y, como la capa de ULU produce las salidas finales, se denomina la capa de salida. 
+
+La siguiente figura muestra un perceptrón con dos entradas y tres salidas. Este perceptrón puede clasificar instancias simultáneamente en tres clases binarias diferentes, lo que lo convierte en un clasificador multietiqueta. También puede usarse para la clasificación multiclase.
 
 <figure style="align: center;">
     <img src="./images/perceptron.png">
