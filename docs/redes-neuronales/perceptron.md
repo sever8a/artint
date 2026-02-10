@@ -1,5 +1,20 @@
+--- 
+title: Redes Neuronales
+summary: Fundamentos y evolución de las redes neuronales.
+authors:
+    - Reproducción autorizada
+    - Jose Robledano
+date: 2026-02-11
+---
 # El perceptrón
-El **perceptrón** es una de las arquitecturas RNA más sencillas, creada en 1957 por Frank Rosenblatt. Se basa en una neurona artificial llamada **unidad lógica de umbral** (ULU). Las entradas y salidas son números (en lugar de valores binarios activada/desactivada) y cada conexión de entrada está asociada a un peso $ w $. La ULU calcula una función lineal de sus entradas: $ z = w_1 x_1 + w_2 x_2 + ... + w_n x_n + b $. $ b $ es el sesgo y permite ajustar cuándo se activará el perceptrón. Después se aplica una función escalonada al resultado. Una función escalonada típica es la **Heaviside** que asumiendo el umbral en 0, se calcula de la siguiente manera:
+El **perceptrón** es una de las arquitecturas RNA más sencillas, creada en 1957 por Frank Rosenblatt. Se basa en una neurona artificial llamada **unidad lógica de umbral** (ULU). Las entradas y salidas son números (en lugar de valores binarios activada/desactivada) y cada conexión de entrada está asociada a un peso $ w $. 
+
+La ULU calcula una función lineal de sus entradas:
+ $ z = w_1 x_1 + w_2 x_2 + ... + w_n x_n + b $. 
+ 
+ $ b $ es el sesgo y permite ajustar cuándo se activará el perceptrón. 
+ 
+ Después se aplica una función escalonada al resultado. Una función de escalonada típica es la **Heaviside** que asumiendo el umbral en 0, se calcula de la siguiente manera:
 
 $$
 Heaviside(z) = \begin{cases} 
@@ -7,6 +22,7 @@ Heaviside(z) = \begin{cases}
 0&\text{si } z < 0 
 \end{cases} 
 $$
+
 
 <figure style="align: center;">
     <img src="./images/ULU.png">

@@ -4,7 +4,7 @@ summary: Los origenes de la Inteligencia Artificial. Expansión y crecimiento.
 authors:
     - Revisión autorizada
     - Jose Robledano
-date: 2024-10-01
+date: 2026-02-01
 ---
 # Introducción
 Algunos autores comienzan a considerar la inteligencia artificial (*Artificial Intelligence*, AI) como la nueva revolución industrial, corazón de lo que algunos llaman industria 4.0.
