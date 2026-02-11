@@ -5,7 +5,7 @@ Para la **regresión multivariable**, se necesita una neurona de entrada por cad
 
 La capa de salida puede no utilizar función de activación, lo que la haría libre de generar cualquier valor. Por lo general, esto está bien, pero si se quiere garantizar que la salida se siempre positiva, se deberá utilzar la función de activación ReLU o **Softplus** (variante suave de ReLU). 
 
-!!! info "valores de salida"
+!!!info "valores de salida"
 
     Si se quiere garantizar que las predicciones queden siempre dentro de un rango de valores determinado, se deberá utilizar la función **sigmoide** (0 a 1) o la **tanh** (-1 a 1).
 
