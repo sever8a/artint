@@ -53,13 +53,20 @@ La siguiente figura muestra un perceptrón con dos entradas y tres salidas. Este
 </figure>
 
 ## Aprendizaje del perceptrón
-El algoritmo de aprendizaje del perceptrón es bastante sencillo. Se inicializa los pesos y el sesgo **aleatoriamente**. Posteriormente el perceptrón recibe las instancias de entrenamiento de una en una y hace sus predicciones para cada instancia. Por cada neurona de salida que produce una predicción errónea, actualiza el sesgo y refuerza los pesos de conexión a partir de las entradas que habrían contribuido a la predicción correcta.
+El algoritmo de aprendizaje del perceptrón es bastante sencillo. Se inicializa los **pesos** y el *sesgo* **aleatoriamente**. 
+
+Posteriormente el perceptrón recibe las instancias de entrenamiento de una en una y hace sus predicciones para cada instancia. Por cada neurona de salida que produce una predicción errónea, actualiza el sesgo y refuerza los pesos de conexión a partir de las entradas que habrían contribuido a la predicción correcta.
 
 !!! info "Aprendizaje"
 
-        La idea del algoritmo a la hora de *actualizar los pesos* es intentar minimizar lo que se denomina **función de pérdida**. En un problema de clasificación esta función determinaría la cantidad de errores cometidos. De esta manera podemos ver el algoritmo como un proceso de **descenso de gradiente** típico en búsqueda del valor mínimo de la función de pérdida.
+        La idea del algoritmo a la hora de *actualizar los pesos* es intentar minimizar lo que se denomina **función de pérdida**. 
+        
+        En un *problema de clasificación* esta función determinaría la cantidad de errores cometidos.
+        
+        De esta manera el algoritmo es un proceso de **descenso de gradiente** típico en búsqueda del valor mínimo de la función de pérdida.
 
-En este descenso de gradiente el algoritmo realizará un número de iteraciones por el conjunto de datos para actualizar estos valores. Al número de pasadas se le denomina **épocas** (*epochs*).
+
+En este descenso de gradiente el algoritmo realizará un número de iteraciones por el conjunto de datos (*dataset*) para actualizar estos valores. Al número de pasadas se le denomina **épocas** (*epochs*).
 
 <figure style="align: center;">
     <img src="./images/descenso-gradiente.png">
@@ -82,7 +89,9 @@ Por otro lado, si la tasa de aprendizaje es demasiado alta, puede que salte por 
     <figcaption>Tasa de aprendizaje demasiado alta</figcaption>
 </figure>
 
-Es importante señalar que la convergencia del perceptrón solo está garantizada en problemas donde se puede establecer una frontera de decisión lineal. 
+!!! info "convergencia"
+
+    Es importante señalar que la convergencia del perceptrón solo está garantizada en problemas donde se puede establecer una frontera de decisión lineal. 
 
 <figure style="align: center;">
     <img src="./images/lineal.png">
