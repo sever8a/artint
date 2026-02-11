@@ -17,8 +17,7 @@ Una red neuronal artificial (RNA) imita el comportamiento de las neuronas bioló
 
 Warren McCulloch y Walter Pitts describieron en 1943 una célula nerviosa de este tipo como una simple puerta lógica con salidas binarias; a las dentritas llegan múltiples señales, que se integran en el cuerpo celular y, si la señal acumulada supera un determinado umbral, se genera una señal de salida que será transmitida por el axón.
 
-!!!alert "Neuronas sintéticas"
-    
+!!! alert "Neuronas sintéticas"
     Este modelo permitía ser aplicado a una neurona artificial. 
     McCulloch y Pitts demostraron que incluso con un modelo simplificado es posible construir una red de neuronas artificiales que pueda calcular cualquier proposición lógica. 
     

@@ -33,8 +33,7 @@ Una sola ULU puede servir para clasificaciones binarias lineales simples. Calcul
 
 En caso contrario, genera la clase negativa. 
 
-!!!info "Practica"
-
+!!! info "Practica"
     Con una sola ULU para clasificar iris basada en la longitud y la anchura del pétalo. 
     
     Entrenar una ULU así requeriría encontrar los valores adecuados para $ w_1, w_2 $ y $ b $.
@@ -57,8 +56,7 @@ El algoritmo de aprendizaje del perceptrón es bastante sencillo. Se inicializa 
 
 Posteriormente el perceptrón recibe las instancias de entrenamiento de una en una y hace sus predicciones para cada instancia. Por cada neurona de salida que produce una predicción errónea, actualiza el sesgo y refuerza los pesos de conexión a partir de las entradas que habrían contribuido a la predicción correcta.
 
-!!!info "Aprendizaje"
-
+!!! info "Aprendizaje"
         La idea del algoritmo a la hora de *actualizar los pesos* es intentar minimizar lo que se denomina **función de pérdida**. 
         
         En un *problema de clasificación* esta función determinaría la cantidad de errores cometidos.
@@ -89,8 +87,7 @@ Por otro lado, si la tasa de aprendizaje es demasiado alta, puede que salte por 
     <figcaption>Tasa de aprendizaje demasiado alta</figcaption>
 </figure>
 
-!!!info "convergencia"
-
+!!! info "convergencia"
     Es importante señalar que la convergencia del perceptrón solo está garantizada en problemas donde se puede establecer una frontera de decisión lineal. 
 
 <figure style="align: center;">
