@@ -24,3 +24,7 @@ Warren McCulloch y Walter Pitts describieron en 1943 una célula nerviosa de est
     
     En el contexto del *aprendizaje supervisado* y de la clasificación, se podría utilizar para pronosticar si un nuevo punto de datos pertenece a una clase o a otra (dependiendo si se activa o no una neurona).
 
+### Tarea reflexión
+
+¿Qué aplicaciones de IA conoces, que probablemente utilicen redes neuronales?
+
