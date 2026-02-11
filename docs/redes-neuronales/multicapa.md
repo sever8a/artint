@@ -39,3 +39,6 @@ La siguiente figura representa el aspecto de estas funciones de activación.
     <img src="./images/funciones-activacion.png">
     <figcaption>Funciones de activación</figcaption>
 </figure>
+
+
+### Tarea 

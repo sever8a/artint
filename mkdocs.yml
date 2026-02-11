@@ -5,7 +5,7 @@ docs_dir: docs
 use_directory_urls: false
 theme:
   language: es
-  favicon: images/favicon.jpeg
+  favicon: images/favicon_iabd.ico
   name: material
   palette:
     primary: light blue
