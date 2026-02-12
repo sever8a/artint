@@ -57,11 +57,11 @@ El algoritmo de aprendizaje del perceptrón es bastante sencillo. Se inicializa 
 Posteriormente el perceptrón recibe las instancias de entrenamiento de una en una y hace sus predicciones para cada instancia. Por cada neurona de salida que produce una predicción errónea, actualiza el sesgo y refuerza los pesos de conexión a partir de las entradas que habrían contribuido a la predicción correcta.
 
 !!! info "Aprendizaje"
-        La idea del algoritmo a la hora de *actualizar los pesos* es intentar minimizar lo que se denomina **función de pérdida**. 
+    La idea del algoritmo a la hora de *actualizar los pesos* es intentar minimizar lo que se denomina **función de pérdida**. 
         
-        En un *problema de clasificación* esta función determinaría la cantidad de errores cometidos.
+    En un *problema de clasificación* esta función determinaría la cantidad de errores cometidos.
         
-        De esta manera el algoritmo es un proceso de **descenso de gradiente** típico en búsqueda del valor mínimo de la función de pérdida.
+    De esta manera el algoritmo es un proceso de **descenso de gradiente** típico en búsquedadel valor mínimo de la función de pérdida.
 
 
 En este descenso de gradiente el algoritmo realizará un número de iteraciones por el conjunto de datos (*dataset*) para actualizar estos valores. Al número de pasadas se le denomina **épocas** (*epochs*).
