@@ -93,6 +93,7 @@ nav:
     - Redes neuronales multicapa: "redes-neuronales/multicapa.md"
     - Redes neuronales multicapa de regresión: "redes-neuronales/regresion.md"
     - Redes neuronales multicapa de clasificación: "redes-neuronales/clasificacion.md"
+    - Redes neuronales convolucionales: "redes-neuronales/convolucionales.md"
   - 6. Visión por computador:
     - Introducción: "computer-vision/introduccion.md"
     - Redes convolucionales: "computer-vision/convolucionales.md"
