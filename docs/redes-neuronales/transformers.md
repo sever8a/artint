@@ -43,7 +43,7 @@ El Transformer aborda estos problemas utilizando **atención** para ponderar la 
 
 El Transformer original se diseñó para tareas de secuencia a secuencia (como traducción). Consta de dos partes principales: un **codificador** y un **decodificador**. Ambas están compuestas por una pila de capas idénticas.
 
-![Arquitectura Transformer](images/arquitectura_transformers.png "Arquitectura transformers")
+![Arquitectura Transformer](../images/arquitectura_transformers.png "Arquitectura transformers")
 
 ### 2.1 Codificador
 
