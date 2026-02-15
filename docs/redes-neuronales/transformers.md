@@ -208,5 +208,5 @@ Los Transformers han revolucionado el deep learning al eliminar la recurrencia y
 - Brown, T., et al. (2020). Language models are few-shot learners. *NeurIPS*.
 - Dosovitskiy, A., et al. (2021). An image is worth 16x16 words: Transformers for image recognition at scale. *ICLR*.
 - Tay, Y., et al. (2022). Efficient transformers: A survey. *ACM Computing Surveys*.
-
+- [Los transformers](https://youtu.be/aL-EmKuB078?si=bjtBvWJ8PVdFVxCV){: target:"_blank"}
 ---
