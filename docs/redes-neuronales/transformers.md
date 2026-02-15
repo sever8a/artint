@@ -80,9 +80,17 @@ Donde:
 
 La idea es que cada elemento (query) calcula una puntuación de similitud con todos los elementos (keys), se normaliza con softmax y se usa para ponderar los values.
 
+!!! info "Autoatención"
+
+    Capta las relaciones entre las palabras. Según su relevancia para el significado de la frase.
+
 #### 2.3.1 Autoatención (Self-Attention)
 
 En la autoatención, $ \(Q\) $, $ \(K\) $ y $ \(V\) $ provienen de la misma secuencia (por ejemplo, las palabras de la oración de entrada). Esto permite que cada palabra atienda a todas las palabras de la misma secuencia, capturando relaciones contextuales.
+
+!!! info "Autoatención"
+
+    Ayuda a enfocarse en las palabras más relevantes, para interpretar el contexto de lo que se está diciendo.
 
 #### 2.3.2 Atención multi-cabeza (Multi-Head Attention)
 
@@ -92,6 +100,12 @@ $ \[
 \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h) W^O
 \] $
 con $ \(\text{head}_i = \text{Attention}(Q W_i^Q, K W_i^K, V W_i^V)\) $
+
+!!! info "Cómo entiende el texto"
+
+    1. **Tokenización**. Divide el texto en elementos más pequeños: palabras o fragmentos de palabras.
+    2. **Embeddings**. Cada token se convierte en números que representan su significado.
+    3. **Posición de las palabras**. Agrega la información sobre la posición de las palabras y como se relacionan entre si.
 
 ### 2.4 Codificación posicional (Positional Encoding)
 
