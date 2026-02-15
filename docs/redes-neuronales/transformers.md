@@ -86,7 +86,7 @@ En la autoatención, \(Q\), \(K\) y \(V\) provienen de la misma secuencia (por e
 
 #### 2.3.2 Atención multi-cabeza (Multi-Head Attention)
 
-En lugar de una sola atención, se realizan \(h\) atenciones en paralelo (cabezas), cada una con proyecciones lineales diferentes de \(Q\), \(K\), \(V\). Luego se concatenan y se proyectan nuevamente. Esto permite que el modelo atienda a información de diferentes subespacios representacionales.
+En lugar de una sola atención, se realizan \(h\) atenciones en paralelo (cabezas), cada una con proyecciones lineales diferentes de $ \(Q\) $, $ \(K\) $, $ \(V\) $. Luego se concatenan y se proyectan nuevamente. Esto permite que el modelo atienda a información de diferentes subespacios representacionales.
 
 \[
 \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h) W^O
@@ -130,7 +130,7 @@ Las conexiones residuales ayudan a entrenar redes profundas al permitir que el g
 | Memoria | Estado oculto fijo | Atención sobre todas las posiciones |
 | Entrenamiento | Lento (no paralelizable en tiempo) | Rápido en GPU (paralelización total) |
 
-La complejidad cuadrática \(O(n^2)\) de la atención puede ser un problema para secuencias muy largas, pero se han propuesto variantes eficientes.
+La complejidad cuadrática $ \(O(n^2)\) $ de la atención puede ser un problema para secuencias muy largas, pero se han propuesto variantes eficientes.
 
 ---
 
