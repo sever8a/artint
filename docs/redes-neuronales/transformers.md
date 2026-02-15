@@ -43,7 +43,7 @@ El Transformer aborda estos problemas utilizando **atención** para ponderar la 
 
 El Transformer original se diseñó para tareas de secuencia a secuencia (como traducción). Consta de dos partes principales: un **codificador** y un **decodificador**. Ambas están compuestas por una pila de capas idénticas.
 
-![Arquitectura Transformer](https://miro.medium.com/max/1400/1*BHzGVskWGS_3jE-6oE0yTw.png)
+![Arquitectura Transformer](images/arquitectura_transformers.png "Arquitectura transformers")
 
 ### 2.1 Codificador
 
@@ -70,39 +70,39 @@ Al igual que en el codificador, cada subcapa tiene conexión residual y normaliz
 
 El corazón del Transformer es la **atención escalada por producto punto** (Scaled Dot-Product Attention). Se define como:
 
-\[
+$ \[
 \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V
-\]
+\] $
 
 Donde:
-- \(Q\) (queries), \(K\) (keys) y \(V\) (values) son matrices obtenidas a partir de las representaciones de entrada mediante proyecciones lineales.
-- \(d_k\) es la dimensión de las keys (factor de escala para evitar gradientes pequeños).
+- $ \(Q\) $ (queries), $ \(K\) $ (keys) y $ \(V\) $ (values) son matrices obtenidas a partir de las representaciones de entrada mediante proyecciones lineales.
+- $ \(d_k\) $ es la dimensión de las keys (factor de escala para evitar gradientes pequeños).
 
 La idea es que cada elemento (query) calcula una puntuación de similitud con todos los elementos (keys), se normaliza con softmax y se usa para ponderar los values.
 
 #### 2.3.1 Autoatención (Self-Attention)
 
-En la autoatención, \(Q\), \(K\) y \(V\) provienen de la misma secuencia (por ejemplo, las palabras de la oración de entrada). Esto permite que cada palabra atienda a todas las palabras de la misma secuencia, capturando relaciones contextuales.
+En la autoatención, $ \(Q\) $, $ \(K\) $ y $ \(V\) $ provienen de la misma secuencia (por ejemplo, las palabras de la oración de entrada). Esto permite que cada palabra atienda a todas las palabras de la misma secuencia, capturando relaciones contextuales.
 
 #### 2.3.2 Atención multi-cabeza (Multi-Head Attention)
 
 En lugar de una sola atención, se realizan \(h\) atenciones en paralelo (cabezas), cada una con proyecciones lineales diferentes de $ \(Q\) $, $ \(K\) $, $ \(V\) $. Luego se concatenan y se proyectan nuevamente. Esto permite que el modelo atienda a información de diferentes subespacios representacionales.
 
-\[
+$ \[
 \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h) W^O
-\]
-con \(\text{head}_i = \text{Attention}(Q W_i^Q, K W_i^K, V W_i^V)\)
+\] $
+con $ \(\text{head}_i = \text{Attention}(Q W_i^Q, K W_i^K, V W_i^V)\) $
 
 ### 2.4 Codificación posicional (Positional Encoding)
 
 Como el Transformer no tiene recurrencia ni convolución, no tiene noción del orden de la secuencia. Para inyectar información de posición, se suman a los embeddings de entrada unos vectores que codifican la posición. En el artículo original se usan funciones seno y coseno de diferentes frecuencias:
 
-\[
+$ \[
 PE_{(pos, 2i)} = \sin\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right)
-\]
-\[
+\] $
+$ \[
 PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right)
-\]
+\] $
 
 Esto permite que el modelo aprenda dependencias relativas fácilmente.
 
@@ -110,9 +110,9 @@ Esto permite que el modelo aprenda dependencias relativas fácilmente.
 
 Cada capa contiene una red totalmente conectada que se aplica a cada posición por separado (idéntica para todas las posiciones). Suele ser de dos capas lineales con activación ReLU:
 
-\[
+$ \[
 \text{FFN}(x) = \max(0, xW_1 + b_1)W_2 + b_2
-\]
+\] $
 
 ### 2.6 Conexiones residuales y normalización
 
@@ -126,7 +126,7 @@ Las conexiones residuales ayudan a entrenar redes profundas al permitir que el g
 |----------------|----------|-------------|
 | Procesamiento | Secuencial | Paralelo (sobre toda la secuencia) |
 | Dependencias lejanas | Limitadas (aunque mejoradas en LSTM) | Captura directa mediante atención |
-| Complejidad temporal por capa | \(O(n)\) | \(O(n^2 \cdot d)\) (pero paralelizable) |
+| Complejidad temporal por capa | $ \(O(n)\) $ | $ \(O(n^2 \cdot d)\) $ (pero paralelizable) |
 | Memoria | Estado oculto fijo | Atención sobre todas las posiciones |
 | Entrenamiento | Lento (no paralelizable en tiempo) | Rápido en GPU (paralelización total) |
 
