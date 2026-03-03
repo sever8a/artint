@@ -30,7 +30,15 @@ La siguiente figura muestra el funcionamiento del algoritmo.
 
 Existen variantes del algoritmo, como **k-means++**, la cual intenta situar los centroides iniciales lejos unos de otros. Esto conduce a resultados mejores y más consistentes que el clásico k-means.
 
-Es importante notar que es muy conveniente realizar un escalado de características previo, para que todas estas se midan en la misma escala, normalizando o estandarizando las mismas.
+!!! alert "Estandarización crítica"
+
+    Es importante notar que es muy conveniente realizar la estandarización de características previo, para que todas estas se midan en la misma escala, normalizando o estandarizando las mismas.
+
+!!! info "Estandarización"
+
+    Para evitar problemas que generan sesgo entre las características, potenciando la importancia en las distancias, de los valores grandes. 
+
+    Consiste en que los datos tengan la media 0 y la desviación estándar 1.
 
 ## Número óptimo de clústeres
 Uno de los principales retos del aprendizaje no supervisado es que no conocemos las etiquetas de clase reales en nuestro conjunto de datos. Por ello, no podemos utilizar métricas de rendimiento como las que utilizamos en el aprendizaje supervisado.

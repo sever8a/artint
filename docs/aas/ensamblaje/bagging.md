@@ -21,3 +21,7 @@ Un ***random forest*** es un ensamble de árboles de decisión, entrenado, por l
 El algoritmo *random forest* introduce una aleatoriedad extra cuando hace crecer los árboles; en vez de buscar la mejor característica cuando divide un nodo, busca la mejor característica entre un subconjunto aleatorio de características. El algoritmo tiene como resultado una diversidad de árboles mayor, lo cual compensa un sesgo más alto por una varianza más baja, produciendo, habitualmente un modelo mejor a nivel general.
 
 Asimismo, los *random forests* permiten medir la importancia relativa de cada característica. Se mide dicha importancia fijándose en cuánto reducen la impureza, de media, los nodos de árboles que utilizan esa característica, a través de todos los árboles del bosque.
+
+!!! info "Decisión final"
+
+    Se promedia la decisión final, entre todos los árboles. Concluyendo por el valor máximo.

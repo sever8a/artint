@@ -24,6 +24,10 @@ El análisis de componentes principales (*Principal Component Analysis*, PCA) es
 
 Antes de poder proyectar el conjunto de entrenamiento en un hiperplano con menos dimensiones, primero se tiene que elegir el hiperplano adecuado. Por ejemplo, en la parte izquierda de la siguiente figura se representa un conjunto de datos 2D simple, junto con tres ejes diferentes (es decir, hiperplanos 1D).
 
+!!! info "Importante"
+
+    De esta manera se reduce el conjunto de características.
+
 <figure style="align: center;">
     <img src="./images/pca1.png">
     <figcaption>Nuevo conjunto de datos 2D después de la proyección</figcaption>

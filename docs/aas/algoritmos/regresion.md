@@ -18,6 +18,14 @@ A continuación se muestra una imagen de una regresión lineal múltiple con 2 c
 
 ![](images/multiplelinearregression.webp)
 
+!!! info "Ventaja"
+
+    Permite solucionar problemas donde existe una relación directa entre los datos. De una manera lineal.
+
+    Muy bien para casos simples.
+
+
+
 ## Regresión polinómica
 Se puede utilizar un modelo de **regresión polinómica** añadiendo términos polinómicos:
 $$ y = w_1 x + w_2 x^2 + … + w_d x^d + b $$
@@ -25,6 +33,12 @@ $$ y = w_1 x + w_2 x^2 + … + w_d x^d + b $$
 A continuación se muestra una imagen de una regresión polinómica simple con 1 característica y 1 valor objetivo.
 
 ![](images/quadraticregression.webp)
+
+!!! alert "Problemas"
+
+    Entrenamiento muy costoso.
+    
+    Para reducir estos costes se utiliza una función de pérdida que se ajusta a todos los puntos.
 
 # Uso de algoritmos de clasificación en tareas de regresión
 Los algoritmos vistos en el apartado de clasificación pueden utilizarse, con ligeras modificaciones, a algoritmos de regresión para la predicción de valores continuos, las **máquinas de vector de soporte aplicadas a la regresión** (**SVR**), el método de **vecinos más cercanos** (**k-NN**), **árboles de decisión** (**DTR**) y **bosques aleatorios** (**RFR**).

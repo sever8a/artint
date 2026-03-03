@@ -3,6 +3,10 @@ Para una introducción al concepto de reducción de la dimensionalidad y de los 
 
 En los siguientes apartados entraremos en detalle con algunos de los enfoques principales para la reducción de la dimensionalidad: proyección y aprendizaje de variedades.
 
+## PCA. Analisis de Características Principales
+
+Se busca simplificar los datos manteniendo la mayor cantidad de información posible. 
+
 
 
 

@@ -24,3 +24,7 @@ La **precisión** (*precision*) es el número de verdaderos positivos entre todo
 La **sensibilidad** (*recall*) consiste en encontrar todos los valores positivos. En el anterior ejemplo se predijo correctamente 62 verdaderos positivos y se tuvo 8 falsos negativos. La sensibilidad es de 62 entre 70. La sensibilidad se utiliza cuando no podemos darnos el lujo de perder ningún valor positivo. Por ejemplo, incluso si un paciente tiene una pequeña probabilidad de tener cáncer, es posible que queramos realizarle pruebas adicionales. El coste de pasar por alto a un paciente que tiene cáncer es mucho mayor que el costo de exámenes de detección adicionales para ese paciente.
 
 ![](images/recall.png)
+
+## F1-Score Recall
+
+Son métricas combinadas de las anteriores (más símples).

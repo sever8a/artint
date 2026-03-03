@@ -8,6 +8,10 @@ $$ MAE = {\sum_{i=1}^n \lvert y_i - \hat{y}_i \rvert \over n} $$
 
 Si un perro tuviera seis cachorros, pero hubieras predicho solo cuatro, la diferencia absoluta sería dos. Esta métrica trata todos los puntos por igual y no es sensible a los valores atípicos. Cuando se trata de aplicaciones en las que no queremos que los errores grandes tengan un impacto importante, se puede utilizar el error absoluto medio. Un ejemplo podría ser predecir la factura mensual de gasolina de un automóvil, cuando un valor atípico puede haber sido causado por un único viaje por carretera.
 
+!!! alert "Compensación de errores"
+
+    Hay que tener cuidado con valores que se compensan. El error absoluto será cero, pero los resultados del modelo tienen margenes similares por encima o debajo del valor correcto.
+
 ## Error cuadrático medio (MSE)
 El siguiente es el **error cuadrático medio** (*Mean Squared Error*, MSE). Es la métrica de error de regresión más utilizada para modelos de regresión. Se calcula de manera similar al error absoluto medio, pero esta vez elevamos al cuadrado el término de diferencia. 
 
@@ -19,7 +23,16 @@ También se suele utilizar la **raíz cuadrada del error cuadrático medio**, (*
 
 $$ RMSE = \sqrt{MSE} $$
 
+!!! alert "Penaliza"
+
+    Penaliza mucho los errores grandes. Por ejemplo, un modelo puede tener error grande en 2 casos, y aparece un error muy grande *tienen mucho peso* y pueden dar una impresión de un modelo con mucho error, cuando no es así.
+
 ## R cuadrado
+
 **R cuadrado** (*R-squared*) es una métrica que cuantifica la cantidad de varianza en la variable objetivo que se explica por las características. Los valores pueden variar entre 0 y 1, donde uno significa que las características explican completamente la variación del objetivo. A continuación hay dos gráficos que visualizan el R cuadrado alto y bajo respectivamente:
 
 ![](images/r2.png)
+
+!!! info "Como interpretar"
+
+    Cuanto más alto sea mejor. Un valor 1 indica que la variabilidad está muy bien explicada. Un valor 0 indica mal resultado.

@@ -27,3 +27,28 @@ Warren McCulloch y Walter Pitts describieron en 1943 una célula nerviosa de est
 
 ¿Qué aplicaciones de IA conoces, que probablemente utilicen redes neuronales?
 
+## Elementos Red neuronal
+
+Las neuronas almacenan un número. Cada neurona se multiplica por el peso del vector de conexión, para obtener el resultado de la siguiente neuronal.
+
+Finalmente se aplica una función de activación, para obtener el valor de la neurona.
+
+### Capa entrada
+
+Las variables independientes se representan con un vector. Cada elemento sdle vector es una neurona de entrada.
+
+### Capas ocultas y conexiones entre neuronas
+
+Cada neurona en la capa oculta recibe señales de toas las neuronas de la capa anterior **feedforward** y de todas las neuronas de su misma capa en el paso de tiempo anterior **recurrente**. La candiad de capas ocultas y neuronas determina la capacidad de modelar secuencias complejas.
+
+!!! alert "Prueba error"
+
+    No es posible establecer una configuración óptima. Hay que seguir un procedimiento de prueba error probando con diferentes estructuras de la red neuronal.
+
+### Función de activación
+
+Cada neurona oculta aplica una función de activiación a la suma ponderada de sus entradas.
+
+### Capa de salida
+
+

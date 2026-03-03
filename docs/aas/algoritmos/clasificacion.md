@@ -52,7 +52,18 @@ Algunos de los algoritmos de árboles de decisión más utilizados son los sigui
 - El algoritmo de **bosque aleatorio** (*Random Forest*, **RF**) combina varios árboles con distinta cantidad *k* de características y la salida de cada uno de ellos proporciona un voto, siendo la opción más votada la elegida como la respuesta del modelo.
   ![](images/randomforest.png)
 
+!!! alert "Bosques aleatorios"
+
+    Se utilizan varios árboles.
+
+    
 Este método no es apropiado para conjuntos de datos pequeños y requiere mucho tiempo durante la fase de entrenamiento.
+
+!!! info "Gran ventaje"
+
+    Permite conocer las *decisiones internas* del algoritmo, lo que facilita la comprensión de la respuesta obtenida.
+
+    Muy utilizados cuande se quiere saber qué ocurre por dentro del modelo. Se puede realizar la trazabilidad de las decisiones de cada rama.
 
 ## Algoritmo clasificador bayesiano ingenuo
 El algoritmo clasificador **bayesiano ingenuo** (*Naïve Bayes*) es una técnica de clasificación probabilística que está fundamentada en el teorema de Bayes y está basada en la idea de que el mejor modelo es el más probable, asumiendo que la ocurrencia de una determinada característica es independiente de que sucedan las otras particularidades. Este es el motivo por el que se le llama ingenuo.
@@ -71,6 +82,12 @@ Asigna una probabilidad entre 0 y 1 de que una instancia pertenezca a una catego
 Se representa mediante una curva formada con forma de S, llamada función sigmoidea, que es una función matemática que se utiliza para asignar los valores predichos a las probabilidades.
 
 ![](images/logistic.png)
+
+!!! info "La ayuda de sigmoide"
+
+    La función **sigmoide** ayuda a que el resultado sea mejor. El valor se distribuye entre 0 y 1.
+
+
 
 ## Máquinas de vector soporte
 Las **máquinas de vector soporte** (*Support Vector Machines*, **SVM**) separan un grupo dado de datos de entrenamiento etiquetados binarios mediante un hiperplano que está a una distancia máxima de ellos (conocido como el **hiperplano de margen máximo**). De esta forma, elementos que son etiquetados con una categoría estarán a un lado del hiperplano y los casos que se encuentren en la otra categoría se situarán al otro lado. Al vector formado por los puntos más cercanos al hiperplano se le llama **vector de soporte**.
