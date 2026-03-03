@@ -27,6 +27,11 @@ Las máquinas aprenden representaciones del lenguaje y del mundo a partir de dat
 - **Escalabilidad y generalización** Mejor desempeño en tareas para las que no ha sido entrenada.
 
 
+## La IA como herramienta
+
+Los aspectos éticos cada vez son más importantes. El uso es necesario, pero hay que desarrollar nuevas capacidades.
+
+
 
 
 
