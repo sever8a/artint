@@ -84,6 +84,25 @@ La idea es que cada elemento (query) calcula una puntuación de similitud con to
 
     Capta las relaciones entre las palabras. Según su relevancia para el significado de la frase.
 
+**Q query** Representa la pregunta que se hace una palabra concreta en ese contexto. Codifica que tipo de información está buscando en el resto de la frase.
+
+**K key** Información que ofrece la palabra al resto.
+
+**V Value** Contiene el valor semántico.
+
+
+Se organzia en tres bloques:
+- **Encoder** (BERT) cada token cuenta con el contexto previo y posterior. Procesamiento bidireccional. Se utiliza para clasificación.
+- **Decoder** (GPT, Llama, Gemma), lee el texto de izquierda a derecha. Su objetivo es predecir el siguiente token. Utiliza el parámetro, basado en una lista de probabilidades. Sin embargo, no devuelve siempre el mismo resultado, por el uso de la variable temperatura. La más famosa y utilizada en los modelos generativos actuales.
+
+!!! info "La temperatura"
+
+    La temperatura pequeña, se centra en la misma respuesta. Más riguroso en las respuesta científicas. 
+    Con temperatura alta, los chistes son mejores.
+
+
+- **Encoder-Decoder** (T5 y Whisper son ejemplos). Combina las opciones anteriores. Se hace la predicción basada en las clasificaciones realizadas previamente. Whisper se basa en esto. Ya que se adapta a nuevas voces, aunque no se corresponden con las del entrenamiento. Son modelos que tienen un alto coste computacional para el entrenamiento, pero sí para el uso.
+
 #### 2.3.1 Autoatención (Self-Attention)
 
 En la autoatención, $ \(Q\) $, $ \(K\) $ y $ \(V\) $ provienen de la misma secuencia (por ejemplo, las palabras de la oración de entrada). Esto permite que cada palabra atienda a todas las palabras de la misma secuencia, capturando relaciones contextuales.
@@ -134,19 +153,39 @@ Las conexiones residuales ayudan a entrenar redes profundas al permitir que el g
 
 ---
 
-## 3. Comparación con RNN/LSTM
+## 3. Tokenización
 
-| Característica | RNN/LSTM | Transformer |
-|----------------|----------|-------------|
-| Procesamiento | Secuencial | Paralelo (sobre toda la secuencia) |
-| Dependencias lejanas | Limitadas (aunque mejoradas en LSTM) | Captura directa mediante atención |
-| Complejidad temporal por capa | $ \(O(n)\) $ | $ \(O(n^2 \cdot d)\) $ (pero paralelizable) |
-| Memoria | Estado oculto fijo | Atención sobre todas las posiciones |
-| Entrenamiento | Lento (no paralelizable en tiempo) | Rápido en GPU (paralelización total) |
+Antes de que un modelo pueda razonar o generar texto, necesita transformar el elnguaje humano en una forma que pueda procesar matemáticamente. La **tokenización** es el paso intermedio: convierte texto continuo en unidades discretas que el modelo puede manejar.
 
-La complejidad cuadrática $ \(O(n^2)\) $ de la atención puede ser un problema para secuencias muy largas, pero se han propuesto variantes eficientes.
+**Subword Tokenization**: En lugar de trabajar solo con plabras completas s eusan fragmentos frecuentes. Permiten descomponer palabras raras en subunidades cojmjunes, por ejemplo "Inconstitucionalmente" -> ["In", "contitucional", "mente"].
 
----
+**Vocabulario**: Conjunto total de tokens que conoce un modelo suele estar entre 32.000 y 128.000 unidades. Compromiso entre expresividad y eficiencia computacional.
+
+**El problema del idioma**, si un tokenizador se ha entredano mayoritariamente con inglés, itiomas como el español tienden a fragmentarse en más tokens apra expresar lo mismo, independientemente del idioma. El tokenizador debe ser el mismo, si la expresión es la misma. Idioma universal.
+
+### Embeddings: El espacio semántico
+
+Las palabras e convierten en tokens antes de ponerlas en el espacio vectorial, de esta manera se puede contextualizar más la palabra con otros puntos. 
+
+La distancia entre vectores se mida, con la distancia Euclidea se capturan relaciones semánticas y sintácticas.
+
+### Alicinación: el problema
+
+Al predicir la siguiente palabra, no aseguramos que el sentido del texto quede bien.
+
+1. *Naturaleza probabilistica*.
+
+2. *Sobreconfianza*. El modelo siempre responde, aun sin saber. Problema del aprendizaje por refuerzo. Sin tener más datos, responde pero sin creer.
+
+3. *Falta de Grounding*, ya no tiene otra realimentación nueva. Se basa en sus propias generaciones.
+
+Tipos de alucinaciones:
+
+- **Confabulación** Inventar una biografía o dato histórico.
+- **Alucinaciones de seguimiento de instrucciones** El modelo entiende la pregunta pero ignora las restricciones. Un ejemplo es cuando se le pide al modelo que responda brevemente en 3 palabras, pero responde en 10.
+- **Falla razonamiento** Errores de lógica, por un mal razonamiento matemático. No sale bien, porque la IA no está pensada para ese razonamiento. El modelo hace varias iteraciones en el pensamiento: primero intenta razonar los pasos a seguir, luego itera con cada paso, luego itera comprobando si el resultado es coherente. En este caso el modelo mejora el razonamiento, al trabajar en varias capas.
+
+Los modelos avanzados de razonamiento, surgen, pero no son necesarios para el público en general.
 
 ## 4. Casos de uso de éxito
 
@@ -170,6 +209,28 @@ La tendencia es entrenar modelos cada vez más grandes con más datos y luego aj
 - **PaLM**, **Chinchilla**, **LLaMA**, etc., con cientos de miles de millones de parámetros.
 
 ### Eficiencia y escalado
+
+Surgen capacidades que no estaban previstas.
+
+Actualmente hay modelos de lenguaje que saben programar. Al dejar libre el entrenamiento, pueden salir habilidades no previstas.
+
+Se pueden crear **Scaling Laws**, el modelo sabe usar herramientas directamente, sin intervención del usuario.
+
+
+!!! info "Tamaños del modelo"
+
+    Los modelos entrenados se pueden hacer más grandes o pequeños, en función del número de parámetros.
+
+    Son modelos grandes, que se entrenaron, pero se ha reducido su tamaño.
+
+    Con técnicas de **Fine-tuning** o **RAG** podemos intentar que un modelo pequeño se comporte como una más grande para tareas específicas.
+
+Hiperparámetros que se pueden modificar, para que surgan funciones emergentes.
+
+* **Número de parámetros**, el modelo puede inferir más relaciones al tener más neuronas.
+* **Dataset de entrenamiento**, dataset de más calidad. Los dataset, el 90% viene de la limpieza de los datos, y su selección.
+* **Cómputo** Si se aumenta la energía y el tiempo en el entrenamiento, el modelo tendrá un ajuste más fino de los pesos. Supone un incrementeo de energía. Con las redes neuronales, está el problema del sobreentrenamiento.
+
 
 La atención cuadrática limita el manejo de secuencias muy largas. Se investigan mecanismos de atención eficientes:
 - **Sparse Attention** (solo atiende a ciertas posiciones).

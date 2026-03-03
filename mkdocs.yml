@@ -103,7 +103,14 @@ nav:
     - Transformadores de visión: "computer-vision/vit.md"
     - Reconocimiento de objetos: "computer-vision/recognition.md"
     - Segmentación de objetos: "computer-vision/segmentation.md"
-
+  - 3. LLMs:
+    - Introducción: "llm/introduccion.md"
+    - Evolución: "llm/iniciales.md"
+    - NLP: "llm/disenlpnyo.md"
+    #- Fase de desarrollo: "mlops/desarrollo.md"
+    #- Fase de despliegue: "mlops/despliegue.md"
+    #- Herramientas: "mlops/herramientas.md"
+    #- Weight & Biases: "mlops/wandb.md"
 extra:
   search:
     language: "es"
