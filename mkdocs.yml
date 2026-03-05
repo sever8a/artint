@@ -109,8 +109,8 @@ nav:
     - NLP: "llm/nlp.md"
     - Finetuning: "llm/finetuning.md"
     - RAG: "llm/rag.md"
-    #- Herramientas: "mlops/herramientas.md"
-    #- Weight & Biases: "mlops/wandb.md"
+    - Agentes: "llm/agentes.md"
+    - Benchmarsk: "llm/benchmarks.md"
 extra:
   search:
     language: "es"

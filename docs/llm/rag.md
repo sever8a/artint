@@ -44,7 +44,7 @@ Pipeline de recuperacxión
 
 Agrupar los vectores en clusters, de esta manera primera se eleige el cluster y luego el vector. Se agiliza la respuesta.
 
-Pripeline de Gneraración
+Pripeline de Generación
 
 Tenemos la pregunta del usuario, y los chunks de la pregunta del usuario. Responder a esta pregunta de usuario basadao en el contexto dado. "Si no está en las fuentes, que no responda".
 
@@ -65,7 +65,7 @@ Documento --> Texto plano --> Segmentación (chunks)
 
     Hay que preparar un prompt para que expanda la consulta inicial, a un nuevo prompt donde se distinga e identifique mejor el contexto de la pregunta.
 
-Preunta --> Modelo LLM --> Pregunta expandida
+Pregunta --> Modelo LLM --> Pregunta expandida
 
 
 **Fallo en la generación** al seleccionar muchos chunks, y se genera un texto demasiado grande para qu eel modelo lo pueda analizar bien. Hay que bajar el contexto. 

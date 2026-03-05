@@ -92,3 +92,81 @@ La frecuencia con la que se debe volver a entrenar depende de varios factores. E
 Cuando volvemos a entrenar, se obtiene un nuevo modelo utilizando nuevos datos. Podríamos usar un modelo que solo use datos nuevos, de modo que haya un modelo separado entrenado con datos antiguos y un modelo entrenado con datos nuevos. También podríamos combinar datos nuevos y antiguos para desarrollar un nuevo modelo. Esto también dependerá del dominio, el coste y el rendimiento del modelo requerido.
 
 Dependiendo de la madurez del aprendizaje automático dentro de la empresa, también podríamos aplicar un reentrenamiento automático una vez que se detecte cambios en los datos. Por ejemplo, cuando detectamos que la edad media de los clientes está cambiando.
+
+## El abismo entre el Notebook y la producción
+
+Coloca rutas relativas en todas las referencias.
+
+Es muy importante la **concurrencia** de varias instancias al mismo tiempo, pensando que múltiples usuarios estén utilizando el modelo simultáneamente. Hay que gestionar colar.
+
+La **latencia** es muy importante. Si no se realiza la respuesta, hay que *mantener entretenido al usuario*, para que no se vuelva a lanzar otra ejecución.
+
+La **disponibilidad** debe estar activo 24/7, contemplar cualquier tipo de fallo. Depende del servicio que esté caido, la resolución debe ser más o menos rápida.
+
+Conviene utilizar reglas de disponibilidad de ciertas herramientas. Por ejemplo, servidores en espejo.
+
+También es imprescindible la **seguridad**. Protegiendo las API y evitar accesos no autorizados. La rotura se puede producir de manera voluntaria o involuntaria.
+
+## Arquitectura de una API de Deep Learning
+
+FastAPI ofrece varias ventajes críticas:
+- Peticiones **asíncronas**. Permite atender multimples peticiones.
+- **Documentación automática**. Genera la documentación automática para usar la API.
+
+### Gestión del ciclo de vida
+
+Al go que funciona hoy, puede no funcionar mañana.
+
+Por ejemplo, una actualización de una librería o API.
+
+Hay que establecer cuando tienen fechas previstas de mantenimiento, para revisar el código.
+
+**Warm-up** Ejecutar inferencias de prueba al inicio, para que el primer usuario no tenga que esperar las primeras cargas.
+
+### Gestión de recursos
+
+Memoria de vídeo (VRAM).
+
+Emplear técnicas para reducir el tamaño del modelo.
+
+La mejor opción es tener muchos recursos, pero siempre hay que ajustar el modelo a los recursos.
+
+## Contenerización con Docker
+
+Lo que funciona en desarrollo no siempre funciona en producción. 
+
+Conviene organizar diferentes capas que se comunican por puertos, para acceder a los diferentes servicios.
+
+Hay que realizar los pasos automáticos, para simplificar el modelo en el contenedor.
+
+Cada imagen con su fichero *dockerfile*. De esta manera se levantan orquestados con el docker compose.
+
+En el **dockerfile** hay que indicar las versiones de las librerías que se tienen que utilizar.
+
+!!! info "Versiones"
+
+    Sin embargo, el uso de versiones fijas, puede provocar problemas de seguridad. Es necesario realizar las actulizaciones de seguridad.
+
+La configuración de puertos es importante, flexibilizarla para que se adapte a los recursos y puertos disponibles del cliente.
+
+## Seguridad y control de acceso
+
+Gestión de diferentes roles de usuarios.
+
+Controlar los límites de crédito, de peticiones por día o segundo. **Rate limiting**.
+
+**CORS** Controla los dominios y puertos para que no interactue quién no queremos.
+
+## Monitorización y observabilidad
+
+## Ciclo de mejora continua
+
+- Producción.
+- Monitorización.
+- Curación. Correcciones.
+- Fine-tuning.
+- Evaluacion.
+- Despliegue.
+
+Entorno de preproducción y producción, exactamente iguales. Otro entorno de desarrollo.
+
