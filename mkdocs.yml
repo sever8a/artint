@@ -107,7 +107,7 @@ nav:
     - Introducción: "llm/introduccion.md"
     - Evolución: "llm/iniciales.md"
     - NLP: "llm/disenlpnyo.md"
-    #- Fase de desarrollo: "mlops/desarrollo.md"
+    - Finetuning: "llm/finetuning.md"
     #- Fase de despliegue: "mlops/despliegue.md"
     #- Herramientas: "mlops/herramientas.md"
     #- Weight & Biases: "mlops/wandb.md"
