@@ -106,9 +106,9 @@ nav:
   - 3. LLMs:
     - Introducción: "llm/introduccion.md"
     - Evolución: "llm/iniciales.md"
-    - NLP: "llm/disenlpnyo.md"
+    - NLP: "llm/nlp.md"
     - Finetuning: "llm/finetuning.md"
-    #- Fase de despliegue: "mlops/despliegue.md"
+    - RAG: "llm/rag.md"
     #- Herramientas: "mlops/herramientas.md"
     #- Weight & Biases: "mlops/wandb.md"
 extra:
