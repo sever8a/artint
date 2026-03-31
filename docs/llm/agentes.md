@@ -1,12 +1,36 @@
 # Agentes
 
-En desarrollo. Utiliza herramientas.
+Un agente es un sistema de inteligencia artificial que utiliza un modelo de lenguaje para realizar tareas específicas, como responder preguntas, generar contenido o tomar decisiones.
 
 ## Cadena de pensamiento
 
 Un mismo modelo utiliza la respuesta de salida como entrada para realimentar la respuesta.
 
-Utiliza la herramienta de buscar en Internet.
+Por ejemplo, un modelo de lenguaje puede generar una pregunta a partir de una pregunta inicial, y luego responder a esa pregunta generada.
+
+Un agente puede tener varios pasos en su cadena de pensamiento, y cada paso puede ser realizado por un modelo diferente.
+
+## Recuperación de información
+
+Los agentes pueden recuperar información de diversas fuentes, como bases de datos, documentos o la web. Esta capacidad es fundamental para proporcionar respuestas precisas y contextualizadas.
+
+### Técnicas de recuperación
+
+**Retrieval Augmented Generation (RAG)** es un enfoque clave que combina la generación de texto con la recuperación de información relevante. El proceso funciona en dos fases:
+
+1. **Búsqueda**: El agente identifica y recupera documentos o fragmentos pertinentes según la consulta.
+2. **Generación**: El modelo utiliza esa información como contexto para generar respuestas más precisas y fundamentadas.
+
+### Herramientas de acceso a información
+
+Los agentes pueden utilizar diversas herramientas:
+
+- Búsqueda en Internet para información actualizada
+- Consultas a bases de datos estructuradas
+- Indexación semántica de documentos locales
+- APIs especializadas para dominios particulares
+
+Esta integración de recuperación y generación mejora significativamente la calidad y fiabilidad de las respuestas.
 
 ## Arquitecturas de razonamiento
 
