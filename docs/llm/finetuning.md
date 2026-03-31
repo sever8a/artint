@@ -28,7 +28,7 @@ La **Estructura y el formato** es importante cuando se utiliza *function calling
  3. **Alignment (Alineación - RLFH/DPO)**, SE ajusta el modelo para que sus respuestas sean seguras, útiles y honestas, basandose en preferencias humanas.
 
 !!! info "Entrenamiento por refuerzo humano"
-
+    
     Cada cierto tiempo se recogen opiniones de los usuarios sobre la elección de la mejor respuesta.
 
     Revisión de respuestas, para realimentar con las mejores respuestas.
@@ -91,7 +91,7 @@ QLoRA lleva la eficiencia aún más lejos, combinando cuantización con LoRA y o
 
 ### Dudas que surgen
 
-Qué es mejor tener modelos con precisión más baja, o modelos.
+Qué es mejor tener modelos con precisión más baja, o modelos precisos más grandes.
 
 Al escalar los parámetros aumenta la complejidad, ya que aunque disminuye por la precisión, aumenta por los parámetros.
 
