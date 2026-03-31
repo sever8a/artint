@@ -1,4 +1,4 @@
- # Paradigma de Ajuste Fino (Fine-tuning)
+# Paradigma de Ajuste Fino (Fine-tuning)
 
  El entrenamiento de un LLm no es un proceso único, sino una escalera de refinamiento. Para entender el (Supervised Fine-Tuning), primero debemos ubicarlo en el **cilo de vida del modelo**.
 
@@ -11,7 +11,7 @@
  Solo se modifican las capas lineales. Pierde conocimiento si tocas otras capas.
 
 
- !!! alert "Nuevo dataset"
+!!! alert "Nuevo dataset"
 
     Se compone de ejemplos que se aportan al modelo. Se tienen que aportar casos nuevos orientados al problema que queremos resolver.
 
@@ -27,7 +27,7 @@ La **Estructura y el formato** es importante cuando se utiliza *function calling
 
  3. **Alignment (Alineación - RLFH/DPO)**, SE ajusta el modelo para que sus respuestas sean seguras, útiles y honestas, basandose en preferencias humanas.
 
- !!! info "Entrenamiento por refuerzo humano"
+!!! info "Entrenamiento por refuerzo humano"
 
     Cada cierto tiempo se recogen opiniones de los usuarios sobre la elección de la mejor respuesta.
 
@@ -37,23 +37,51 @@ La **Estructura y el formato** es importante cuando se utiliza *function calling
 
 Entrenar un modelo desde cero es igual de costoso que un fine-tuning completo del modelo.
 
-Un modelo 9B 9.000 millones de parámetros requiere actualizar 9.000 millones de númeres en cada paso.
+Un modelo 9B 9.000 millones de parámetros requiere actualizar 9.000 millones de números en cada paso.
 
 ### LoRA (Low-Rank Adaptation)
 
-No es necesario modificar todos los parámetros. Los ajustes importantes pueden realizarse mediante una operación matricial.
+No es necesario modificar todos los parámetros. Los ajustes importantes pueden representarse mediante matrices mucho más pequeñas y sencillas, ocupando un espacio reducido dentro de la red.
+
+Es menos eficiente en su uso. Los valores de las matrices son aleatorios en una distribución normal.
+### LoRA (Low-Rank Adaptation)
+
+No es necesario modificar todos los parámetros. Los ajustes importantes pueden representarse mediante matrices mucho más pequeñas y sencillas, ocupando un espacio reducido dentro de la red.
+
+#### Cómo funciona
+
+En lugar de modificar la matriz de pesos original W, que es enorme, LoRA la congela y añade dos matrices pequeñas, A y B, que sí se entrenan. La actualización final del modelo se calcula como:
+
+$$W_{final} = W + (A \times B)$$
+
+Esto significa que solo entrenamos un pequeño subconjunto de parámetros, manteniendo intacta la base del modelo.
+
+#### Ventajas de LoRA
+
+- Reduce hasta un 99% los parámetros que se deben entrenar.
+- Disminuye drásticamente el consumo de memoria durante el entrenamiento.
+- Los adaptadores resultantes son muy ligeros, lo que facilita su almacenamiento y distribución.
 
 Es menos eficiente en su uso. Los valores de las matrices son aleatorios en una distribución normal.
 
 ### QLoRA Cuantización + LoRA
 
-Más eficiente, combina la contización con LoRA y otras optimizaciones de memoria. 
+Más eficiente, combina la cuantización con LoRA y otras optimizaciones de memoria. 
 
 * Comprime los pesos del modelo, reduciendo la precisión. Convierte los valores de los parámetros, por ejemplo de float 32 a float 16. Esto supone que pierde capacidades, aunque puede mantener la eficiencia. De esta manera se reduce el tamaño.
 
 * **Normal Float** Comprime los pesos del modelo original a solo 4bits, perdiendo cierta precisión.
 
 * **Paged Optimizers** Gestiona los picos de memoria usando la RAM del sistema cuando la VRAM se llena, evita errores "sin memoria".
+#### QLoRA: Cuantización + LoRA
+
+QLoRA lleva la eficiencia aún más lejos, combinando cuantización con LoRA y otras optimizaciones de memoria:
+
+* **4-bit NormalFloat (NF4)** Comprime los pesos del modelo original a solo 4 bits, manteniendo casi toda la precisión sin perder capacidades significativas.
+
+* **Double Quantization** Comprime también las constantes de cuantización, reduciendo aún más el tamaño (float32 a float16).
+
+* **Paged Optimizers** Gestiona los picos de memoria usando la RAM del sistema cuando la VRAM se llena, evitando errores de "Out of Memory".
 
 !!! alert "Resultado"
 
