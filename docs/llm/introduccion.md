@@ -16,7 +16,7 @@ Las máquinas aprenden representaciones del lenguaje y del mundo a partir de dat
 
     Problemas con la competencia profesional si no se conoce y utilizan las herramientas basadas en IA.
 
-## NLP Procesamiento Lenguna Natural
+## NLP Procesamiento Lenguaje Natural
 
 * Entender y generar texto, superando la limitación de hacer solo treas específicas.
 * Permite aprovechar modelos preentrenados que se pueden ajustar a diferentes tareas de lenguaje con menos datos.

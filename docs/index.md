@@ -20,3 +20,4 @@ El curriculum del curso de especialización viene fijado por el [Real Decreto 27
 - [Aprendizaje no supervisado](aans/introduccion.md)
 - [Redes neuronales](redes-neuronales/introduccion.md)
 - [Visión por computador](computer-vision/introduccion.md)
+- [LLMs](llm/introduccion.md)

@@ -25,6 +25,9 @@ La **sensibilidad** (*recall*) consiste en encontrar todos los valores positivos
 
 ![](images/recall.png)
 
-## F1-Score Recall
+## F1-Score
+El **F1-Score** es una métrica combinada que equilibra precisión y sensibilidad. Se calcula como la media armónica de ambas métricas, dando igual peso a cada una. Es especialmente útil cuando existe un desequilibrio entre clases o cuando necesitas una única métrica que represente el rendimiento general del modelo. El F1-Score varía entre 0 y 1, siendo 1 el mejor valor posible.
 
-Son métricas combinadas de las anteriores (más símples).
+**Fórmula:** F1 = 2 × (Precisión × Sensibilidad) / (Precisión + Sensibilidad)
+
+Se recomienda usar F1-Score cuando los datos no están balanceados o cuando los costes de falsos positivos y falsos negativos son similares.

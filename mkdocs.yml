@@ -32,6 +32,7 @@ nav:
       - Sistemas basados en reglas. Sistemas expertos: "ia/modelos/expertos.md"
       - Sistemas de razonamiento impreciso: "ia/modelos/impreciso.md"
       - Sistemas de aprendizaje automático. Machine Learning: "ia/modelos/machine.md"
+      - La importancia de los datos: "ia/modelos/datos.md"
       - Tipos de sistemas de aprendizaje automático:
         - Introducción: "ia/tipos_aa/introduccion.md"
         - Supervisión del entrenamiento: "ia/tipos_aa/supervision.md"
@@ -103,7 +104,7 @@ nav:
     - Transformadores de visión: "computer-vision/vit.md"
     - Reconocimiento de objetos: "computer-vision/recognition.md"
     - Segmentación de objetos: "computer-vision/segmentation.md"
-  - 3. LLMs:
+  - 7. LLMs:
     - Introducción: "llm/introduccion.md"
     - Evolución: "llm/iniciales.md"
     - NLP: "llm/nlp.md"

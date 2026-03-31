@@ -1,8 +1,25 @@
 # Entrenamiento y selección de modelos
-Se han desarrollado muchos algoritmos diferentes de aprendizaje automático para resolver tareas de distintas problemáticas. Por ejemplo, cada algoritmo de clasificación tiene sus sesgos inherentes, y ningún modelo de clasificación goza de superioridad si no hacemos ninguna suposición sobre la tarea. En la práctica, por tanto, es esencial comparar al menos un puñado de algoritmos de aprendizaje diferentes para entrenar, y seleccionar el modelo que mejor funcione. Pero, antes de poder comparar diferentes modelos, tenemos que decidir una métrica para medir el rendimiento. Una métrica comúnmente utilizada es la precisión de la clasificación, que se define como la proporción de instancias clasificadas correctamente.
 
-¿Cómo sabemos qué modelo tiene un buen rendimiento con el conjunto de datos de prueba final y con los del mundo real si no utilizamos este conjunto de datos prueba para la selección del modelo, sino que lo conservamos para la evaluación final? Para abordar la cuestión que encierra esta pregunta, se pueden utilizar diferentes técnicas, que se resumen en la “validación cruzada”. En la validación cruzada, dividimos un conjunto de datos en subconjuntos de entrenamiento y validación para estimar el rendimiento de generalización del modelo.
+## Comparación de algoritmos
 
-Por último, tampoco podemos esperar que los parámetros por defecto de los diferentes algoritmos de aprendizaje proporcionados por las bibliotecas de software sean óptimos para el problema específico de la tarea. Por lo tanto, será necesario usar con frecuencias técnicas de optimización de hiperparámetros que nos ayuden a ajustar el rendimiento de nuestro modelo.
+Se han desarrollado numerosos algoritmos de aprendizaje automático para resolver problemas diversos. Cada algoritmo de clasificación posee sesgos inherentes, y ningún modelo goza de superioridad universal sin asumir características específicas de la tarea. Por tanto, es esencial:
 
-Podemos pensar en estos hiperparámetros como parámetros que no se deducen de los datos, sino que representan los mandos del modelo sobre los que podemos actuar para mejorar su rendimiento.
+- Comparar varios algoritmos de aprendizaje diferentes
+- Entrenar cada uno de ellos
+- Seleccionar el modelo con mejor desempeño
+
+### Métricas de rendimiento
+
+Para comparar modelos necesitamos establecer una métrica. La **precisión de clasificación** es una métrica común, definida como la proporción de instancias clasificadas correctamente.
+
+## Validación cruzada
+
+¿Cómo evaluamos el rendimiento real sin comprometer nuestro conjunto de prueba final?
+
+La validación cruzada responde esta pregunta dividiendo el conjunto de datos en subconjuntos de entrenamiento y validación para estimar el rendimiento de generalización del modelo. Esta técnica permite evaluar el modelo sin utilizar los datos de prueba en la selección.
+
+## Optimización de hiperparámetros
+
+Los parámetros por defecto de los algoritmos raramente son óptimos para cada problema específico. Es necesario aplicar técnicas de optimización de hiperparámetros para ajustar el rendimiento.
+
+Los **hiperparámetros** son parámetros no deducidos de los datos, sino variables controlables del modelo que permiten mejorar su desempeño.

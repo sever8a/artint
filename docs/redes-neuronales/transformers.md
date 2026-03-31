@@ -27,7 +27,7 @@ Este documento explica los fundamentos de los Transformers, su arquitectura, com
 
 ---
 
-## 1. Limitaciones de las RNN y necesidad de una nueva arquitectura
+## Limitaciones de las RNN y necesidad de una nueva arquitectura
 
 Las RNN procesan secuencias elemento por elemento, manteniendo un estado oculto que se actualiza en cada paso. Esto tiene varios inconvenientes:
 
@@ -39,13 +39,13 @@ El Transformer aborda estos problemas utilizando **atención** para ponderar la 
 
 ---
 
-## 2. Arquitectura Transformer
+## Arquitectura Transformer
 
 El Transformer original se diseñó para tareas de secuencia a secuencia (como traducción). Consta de dos partes principales: un **codificador** y un **decodificador**. Ambas están compuestas por una pila de capas idénticas.
 
 ![Arquitectura Transformer](../images/arquitectura_transformers.png "Arquitectura transformers")
 
-### 2.1 Codificador
+### Codificador
 
 El codificador transforma una secuencia de entrada (por ejemplo, una oración en español) en una representación continua que captura el contexto de cada palabra. Está formado por una pila de \(N\) capas (generalmente 6). Cada capa tiene dos subcapas:
 
@@ -56,7 +56,7 @@ Cada subcapa va seguida de una **conexión residual** (suma de la entrada y la s
 
 La salida del codificador es una secuencia de vectores de la misma longitud que la entrada, pero enriquecidos con información contextual.
 
-### 2.2 Decodificador
+### Decodificador
 
 El decodificador genera la secuencia de salida (por ejemplo, la traducción al inglés) paso a paso, de forma autorregresiva. También es una pila de \(N\) capas, pero cada capa tiene tres subcapas:
 
@@ -66,7 +66,7 @@ El decodificador genera la secuencia de salida (por ejemplo, la traducción al i
 
 Al igual que en el codificador, cada subcapa tiene conexión residual y normalización.
 
-### 2.3 Mecanismo de atención
+### Mecanismo de atención
 
 El corazón del Transformer es la **atención escalada por producto punto** (Scaled Dot-Product Attention). Se define como:
 
@@ -91,19 +91,19 @@ La idea es que cada elemento (query) calcula una puntuación de similitud con to
 **V Value** Contiene el valor semántico.
 
 
-Se organzia en tres bloques:
+Se organiza en tres bloques:
 - **Encoder** (BERT) cada token cuenta con el contexto previo y posterior. Procesamiento bidireccional. Se utiliza para clasificación.
 - **Decoder** (GPT, Llama, Gemma), lee el texto de izquierda a derecha. Su objetivo es predecir el siguiente token. Utiliza el parámetro, basado en una lista de probabilidades. Sin embargo, no devuelve siempre el mismo resultado, por el uso de la variable temperatura. La más famosa y utilizada en los modelos generativos actuales.
 
 !!! info "La temperatura"
 
-    La temperatura pequeña, se centra en la misma respuesta. Más riguroso en las respuesta científicas. 
+    La temperatura pequeña, se centra en la misma respuesta. Más riguroso en las respuestas científicas. 
     Con temperatura alta, los chistes son mejores.
 
 
 - **Encoder-Decoder** (T5 y Whisper son ejemplos). Combina las opciones anteriores. Se hace la predicción basada en las clasificaciones realizadas previamente. Whisper se basa en esto. Ya que se adapta a nuevas voces, aunque no se corresponden con las del entrenamiento. Son modelos que tienen un alto coste computacional para el entrenamiento, pero sí para el uso.
 
-#### 2.3.1 Autoatención (Self-Attention)
+#### Autoatención (Self-Attention)
 
 En la autoatención, $ \(Q\) $, $ \(K\) $ y $ \(V\) $ provienen de la misma secuencia (por ejemplo, las palabras de la oración de entrada). Esto permite que cada palabra atienda a todas las palabras de la misma secuencia, capturando relaciones contextuales.
 
@@ -111,7 +111,7 @@ En la autoatención, $ \(Q\) $, $ \(K\) $ y $ \(V\) $ provienen de la misma secu
 
     Ayuda a enfocarse en las palabras más relevantes, para interpretar el contexto de lo que se está diciendo.
 
-#### 2.3.2 Atención multi-cabeza (Multi-Head Attention)
+#### Atención multi-cabeza (Multi-Head Attention)
 
 En lugar de una sola atención, se realizan \(h\) atenciones en paralelo (cabezas), cada una con proyecciones lineales diferentes de $ \(Q\) $, $ \(K\) $, $ \(V\) $. Luego se concatenan y se proyectan nuevamente. Esto permite que el modelo atienda a información de diferentes subespacios representacionales.
 
@@ -126,7 +126,7 @@ con $ \(\text{head}_i = \text{Attention}(Q W_i^Q, K W_i^K, V W_i^V)\) $
     2. **Embeddings**. Cada token se convierte en números que representan su significado.
     3. **Posición de las palabras**. Agrega la información sobre la posición de las palabras y como se relacionan entre si.
 
-### 2.4 Codificación posicional (Positional Encoding)
+### Codificación posicional (Positional Encoding)
 
 Como el Transformer no tiene recurrencia ni convolución, no tiene noción del orden de la secuencia. Para inyectar información de posición, se suman a los embeddings de entrada unos vectores que codifican la posición. En el artículo original se usan funciones seno y coseno de diferentes frecuencias:
 
@@ -139,7 +139,7 @@ PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right)
 
 Esto permite que el modelo aprenda dependencias relativas fácilmente.
 
-### 2.5 Red feed-forward
+### Red feed-forward
 
 Cada capa contiene una red totalmente conectada que se aplica a cada posición por separado (idéntica para todas las posiciones). Suele ser de dos capas lineales con activación ReLU:
 
@@ -147,33 +147,33 @@ $ \[
 \text{FFN}(x) = \max(0, xW_1 + b_1)W_2 + b_2
 \] $
 
-### 2.6 Conexiones residuales y normalización
+### Conexiones residuales y normalización
 
 Las conexiones residuales ayudan a entrenar redes profundas al permitir que el gradiente fluya directamente. La normalización de capa (LayerNorm) estabiliza el entrenamiento.
 
 ---
 
-## 3. Tokenización
+## Tokenización
 
-Antes de que un modelo pueda razonar o generar texto, necesita transformar el elnguaje humano en una forma que pueda procesar matemáticamente. La **tokenización** es el paso intermedio: convierte texto continuo en unidades discretas que el modelo puede manejar.
+Antes de que un modelo pueda razonar o generar texto, necesita transformar el lenguaje humano en una forma que pueda procesar matemáticamente. La **tokenización** es el paso intermedio: convierte texto continuo en unidades discretas que el modelo puede manejar.
 
-**Subword Tokenization**: En lugar de trabajar solo con plabras completas s eusan fragmentos frecuentes. Permiten descomponer palabras raras en subunidades cojmjunes, por ejemplo "Inconstitucionalmente" -> ["In", "contitucional", "mente"].
+**Subword Tokenization**: En lugar de trabajar solo con palabras completas se usan fragmentos frecuentes. Permiten descomponer palabras raras en subunidades comunes, por ejemplo "Inconstitucionalmente" -> ["In", "constitucional", "mente"].
 
 **Vocabulario**: Conjunto total de tokens que conoce un modelo suele estar entre 32.000 y 128.000 unidades. Compromiso entre expresividad y eficiencia computacional.
 
-**El problema del idioma**, si un tokenizador se ha entredano mayoritariamente con inglés, itiomas como el español tienden a fragmentarse en más tokens apra expresar lo mismo, independientemente del idioma. El tokenizador debe ser el mismo, si la expresión es la misma. Idioma universal.
+**El problema del idioma**, si un tokenizador se ha entrenado mayoritariamente con inglés, idiomas como el español tienden a fragmentarse en más tokens para expresar lo mismo, independientemente del idioma. El tokenizador debe ser el mismo, si la expresión es la misma. Idioma universal.
 
 ### Embeddings: El espacio semántico
 
-Las palabras e convierten en tokens antes de ponerlas en el espacio vectorial, de esta manera se puede contextualizar más la palabra con otros puntos. 
+Las palabras se convierten en tokens antes de ponerlas en el espacio vectorial, de esta manera se puede contextualizar más la palabra con otros puntos. 
 
-La distancia entre vectores se mida, con la distancia Euclidea se capturan relaciones semánticas y sintácticas.
+La distancia entre vectores se mide con la distancia euclidea para capturar relaciones semánticas y sintácticas.
 
-### Alicinación: el problema
+### Alucinación: el problema
 
-Al predicir la siguiente palabra, no aseguramos que el sentido del texto quede bien.
+Al predecir la siguiente palabra, no aseguramos que el sentido del texto quede bien.
 
-1. *Naturaleza probabilistica*.
+1. *Naturaleza probabilística*.
 
 2. *Sobreconfianza*. El modelo siempre responde, aun sin saber. Problema del aprendizaje por refuerzo. Sin tener más datos, responde pero sin creer.
 
@@ -183,11 +183,11 @@ Tipos de alucinaciones:
 
 - **Confabulación** Inventar una biografía o dato histórico.
 - **Alucinaciones de seguimiento de instrucciones** El modelo entiende la pregunta pero ignora las restricciones. Un ejemplo es cuando se le pide al modelo que responda brevemente en 3 palabras, pero responde en 10.
-- **Falla razonamiento** Errores de lógica, por un mal razonamiento matemático. No sale bien, porque la IA no está pensada para ese razonamiento. El modelo hace varias iteraciones en el pensamiento: primero intenta razonar los pasos a seguir, luego itera con cada paso, luego itera comprobando si el resultado es coherente. En este caso el modelo mejora el razonamiento, al trabajar en varias capas.
+- **Falla de razonamiento** Errores de lógica, por un mal razonamiento matemático. No sale bien, porque la IA no está pensada para ese razonamiento. El modelo hace varias iteraciones en el pensamiento: primero intenta razonar los pasos a seguir, luego itera con cada paso, luego itera comprobando si el resultado es coherente. En este caso el modelo mejora el razonamiento, al trabajar en varias capas.
 
-Los modelos avanzados de razonamiento, surgen, pero no son necesarios para el público en general.
+Los modelos avanzados de razonamiento surgen, pero no son necesarios para el público en general.
 
-## 4. Casos de uso de éxito
+## Casos de uso de éxito
 
 - **Modelos de lenguaje**: GPT (Generative Pre-trained Transformer), BERT (Bidirectional Encoder Representations from Transformers) y sus variantes (RoBERTa, ALBERT, etc.) dominan el NLP.
 - **Traducción automática**: el Transformer original superó a las RNN en tareas de traducción.
@@ -200,7 +200,7 @@ Los modelos avanzados de razonamiento, surgen, pero no son necesarios para el p�
 
 ---
 
-## 5. Tendencias actuales y evolución
+## Tendencias actuales y evolución
 
 ### Modelos pre-entrenados a gran escala
 
@@ -225,11 +225,11 @@ Se pueden crear **Scaling Laws**, el modelo sabe usar herramientas directamente,
 
     Con técnicas de **Fine-tuning** o **RAG** podemos intentar que un modelo pequeño se comporte como una más grande para tareas específicas.
 
-Hiperparámetros que se pueden modificar, para que surgan funciones emergentes.
+Hiperparámetros que se pueden modificar para que surjan funciones emergentes:
 
 * **Número de parámetros**, el modelo puede inferir más relaciones al tener más neuronas.
-* **Dataset de entrenamiento**, dataset de más calidad. Los dataset, el 90% viene de la limpieza de los datos, y su selección.
-* **Cómputo** Si se aumenta la energía y el tiempo en el entrenamiento, el modelo tendrá un ajuste más fino de los pesos. Supone un incrementeo de energía. Con las redes neuronales, está el problema del sobreentrenamiento.
+* **Dataset de entrenamiento**, dataset de más calidad. Los dataset, el 90% viene de la limpieza de los datos y su selección.
+* **Cómputo** Si se aumenta la energía y el tiempo en el entrenamiento, el modelo tendrá un ajuste más fino de los pesos. Supone un incremento de energía. Con las redes neuronales, está el problema del sobreentrenamiento.
 
 
 La atención cuadrática limita el manejo de secuencias muy largas. Se investigan mecanismos de atención eficientes:
@@ -254,13 +254,26 @@ Para dispositivos móviles, se buscan versiones más ligeras: **DistilBERT**, **
 
 Los Transformers se aplican en robótica, control, simulación de física, etc.
 
----
 
-## 6. Conclusión
+## Conclusión
 
 Los Transformers han revolucionado el deep learning al eliminar la recurrencia y basarse en atención, permitiendo un entrenamiento paralelo y una capacidad sin precedentes para capturar dependencias contextuales. Modelos como BERT y GPT se han convertido en herramientas fundamentales en NLP y están expandiéndose a otras áreas. A pesar de los retos de eficiencia para secuencias muy largas, la investigación continua en arquitecturas eficientes y modelos multimodales asegura que los Transformers seguirán siendo una pieza clave en la inteligencia artificial.
 
----
+## El salto del ML tradicional al PLN moderno
+
+El enfoque tradicional del aprendizaje automático requería entrenar un modelo específico para cada tarea individual. Un modelo entrenado para clasificación de sentimientos solo realizaba esa función; otro para traducción solo traducía. Esta rigidez limitaba la flexibilidad y requería recursos significativos para cada nueva aplicación.
+
+Los Transformers han catalizado un cambio fundamental hacia el **Procesamiento de Lenguaje Natural (NLP) moderno**. Ahora es posible desarrollar modelos capaces de entender y generar texto de forma multimodal, superando la limitación histórica de las tareas específicas. La clave está en el **preentrenamiento a gran escala** seguido de **ajuste fino (fine-tuning)** con pocos datos especializados.
+
+Este paradigma ofrece ventajas transformadoras:
+
+- **Multitarea**: Un único modelo preentrenado puede adaptarse a clasificación, traducción, respuesta a preguntas y generación de texto sin reentrenamiento desde cero.
+- **Escalabilidad y generalización**: Los modelos Transformer generalizan mejor a textos y contextos nunca vistos durante el entrenamiento, demostrando una capacidad de razonamiento que va más allá de la memorización.
+- **Eficiencia de datos**: Aprovechan el conocimiento capturado en el preentrenamiento, requiriendo muchos menos datos etiquetados para tareas específicas.
+
+Este cambio representa una transición desde sistemas especializados y rígidos hacia arquitecturas flexibles, generalizables y transferibles que han democratizado el acceso a capacidades avanzadas de lenguaje.
+
+
 
 ## Referencias
 
@@ -270,4 +283,4 @@ Los Transformers han revolucionado el deep learning al eliminar la recurrencia y
 - Dosovitskiy, A., et al. (2021). An image is worth 16x16 words: Transformers for image recognition at scale. *ICLR*.
 - Tay, Y., et al. (2022). Efficient transformers: A survey. *ACM Computing Surveys*.
 - [Los transformers](https://youtu.be/aL-EmKuB078?si=bjtBvWJ8PVdFVxCV){: target:"_blank"}
----
+

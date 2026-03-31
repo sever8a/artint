@@ -7,48 +7,66 @@ authors:
 date: 2026-02-11
 ---
 # Introducción a las redes neuronales artificiales
+
 ## Concepto de red neuronal artificial
-Una red neuronal artificial (RNA) imita el comportamiento de las neuronas biológicas. Las neuronas biológicas son células nerviosas del cerebro interconectadas que participan en el procesamiento y en la transmisión de señales químicas y eléctricas.
+
+Una red neuronal artificial (RNA) es un modelo computacional que imita el funcionamiento de las neuronas biológicas. Las neuronas biológicas son células nerviosas del cerebro interconectadas que procesan y transmiten señales químicas y eléctricas.
 
 <figure style="align: center;">
     <img src="./images/neurona-biologica.png">
     <figcaption>Neurona biológica</figcaption>
 </figure>
 
-Warren McCulloch y Walter Pitts describieron en 1943 una célula nerviosa de este tipo como una simple puerta lógica con salidas binarias; a las dentritas llegan múltiples señales, que se integran en el cuerpo celular y, si la señal acumulada supera un determinado umbral, se genera una señal de salida que será transmitida por el axón.
+En 1943, Warren McCulloch y Walter Pitts modelaron una neurona biológica como una puerta lógica simple con salidas binarias. El modelo funciona así: múltiples señales llegan a las dendritas, se integran en el cuerpo celular y, si la suma supera un umbral específico, se genera una señal de salida transmitida por el axón.
 
 !!! alert "Neuronas sintéticas"
-    Este modelo permitía ser aplicado a una neurona artificial. 
-    McCulloch y Pitts demostraron que incluso con un modelo simplificado es posible construir una red de neuronas artificiales que pueda calcular cualquier proposición lógica. 
+    Este modelo se adaptó para crear neuronas artificiales. McCulloch y Pitts demostraron que, incluso con un modelo simplificado, es posible construir redes de neuronas artificiales capaces de calcular cualquier proposición lógica.
     
-    En el contexto del *aprendizaje supervisado* y de la clasificación, se podría utilizar para pronosticar si un nuevo punto de datos pertenece a una clase o a otra (dependiendo si se activa o no una neurona).
+    En *aprendizaje supervisado* y clasificación, se pueden usar para predecir si un nuevo dato pertenece a una clase u otra según se active o no una neurona.
 
-### Tarea reflexión
+### Tarea de reflexión
 
-¿Qué aplicaciones de IA conoces, que probablemente utilicen redes neuronales?
+¿Qué aplicaciones de IA conoces que probablemente utilicen redes neuronales?
 
-## Elementos Red neuronal
+## Elementos de una red neuronal
 
-Las neuronas almacenan un número. Cada neurona se multiplica por el peso del vector de conexión, para obtener el resultado de la siguiente neuronal.
+Una red neuronal procesa información en capas. Cada neurona almacena un valor que se multiplica por un peso de conexión y se transmite a la siguiente capa, aplicando una función de activación al resultado.
 
-Finalmente se aplica una función de activación, para obtener el valor de la neurona.
+### Capa de entrada
 
-### Capa entrada
-
-Las variables independientes se representan con un vector. Cada elemento sdle vector es una neurona de entrada.
+Las variables independientes se representan en un vector. Cada elemento es una neurona de entrada que recibe los datos.
 
 ### Capas ocultas y conexiones entre neuronas
 
-Cada neurona en la capa oculta recibe señales de toas las neuronas de la capa anterior **feedforward** y de todas las neuronas de su misma capa en el paso de tiempo anterior **recurrente**. La candiad de capas ocultas y neuronas determina la capacidad de modelar secuencias complejas.
+Cada neurona oculta recibe señales de todas las neuronas de la capa anterior (conexiones **feedforward**) y, en redes recurrentes, de su propia capa en el paso de tiempo anterior. El número de capas ocultas y neuronas determina la capacidad para modelar patrones complejos.
 
-!!! alert "Prueba error"
-
-    No es posible establecer una configuración óptima. Hay que seguir un procedimiento de prueba error probando con diferentes estructuras de la red neuronal.
+!!! alert "Configuración mediante prueba-error"
+    No existe una configuración óptima predefinida. Debes probar diferentes arquitecturas de red neuronal para encontrar la que mejor se ajuste a tu problema.
 
 ### Función de activación
 
-Cada neurona oculta aplica una función de activiación a la suma ponderada de sus entradas.
+Cada neurona oculta aplica una función de activación a la suma ponderada de sus entradas. Esta función introduce no-linealidad, permitiendo que la red aprenda patrones más complejos.
 
 ### Capa de salida
 
+La capa de salida produce el resultado final de la red según la tarea (regresión, clasificación, etc.).
+
+## Ejemplo de arquitectura de una red neuronal
+
+Consideremos un problema de clasificación: predecir si un cliente comprará un producto basándose en edad e ingresos.
+
+**Paso 1: Capa de entrada**
+- 2 neuronas de entrada: edad e ingresos del cliente
+
+**Paso 2: Capas ocultas**
+- 1ª capa oculta: 4 neuronas conectadas a las 2 neuronas de entrada
+- 2ª capa oculta: 2 neuronas conectadas a las 4 neuronas anteriores
+
+**Paso 3: Función de activación**
+- Aplicamos ReLU en las capas ocultas para introducir no-linealidad
+
+**Paso 4: Capa de salida**
+- 1 neurona con función sigmoid (para clasificación binaria: compra/no compra)
+
+Esta arquitectura (2 → 4 → 2 → 1) con conexiones feedforward permite que la red aprenda patrones no-lineales en los datos de entrada para realizar la predicción.
 
