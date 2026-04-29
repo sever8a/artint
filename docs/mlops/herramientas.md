@@ -13,7 +13,57 @@ Existe una amplia gama de herramientas para monitorear proyectos de aprendizaje 
 
 También hay herramientas disponibles que proporcionan una plataforma completa del ciclo de vida del aprendizaje automático. Cada proveedor de nube, AWS, Azure y Google, tiene uno. Se llaman **AWS Sagemaker**, **Azure Machine Learning** y **Google Cloud AI Platform**. Las herramientas que abarcan todo el ciclo de vida del aprendizaje automático proporcionan herramientas para cada tarea del ciclo de vida. Esta podría ser una herramienta para realizar exploración y procesamiento de datos, pero también un almacén de características y una herramienta de capacitación de modelos.
 
+## MLFlow
+
+MLFlow es una plataforma de código abierto para gestionar el ciclo de vida de modelos de aprendizaje automático. Sus componentes principales son:
+
+- Tracking: registro de experimentos (parámetros, métricas y artefactos) y visualización mediante una interfaz web.
+- Projects: formato para empaquetar código reproducible y ejecutar experimentos de forma consistente.
+- Models: formato estándar para empaquetar modelos y herramientas para servirlos en distintos entornos.
+- Model Registry: gestión del ciclo de vida de un modelo (versionado, transición de estado, anotaciones).
+
+MLFlow soporta múltiples backends para el almacenamiento de metadatos (SQLite, MySQL, PostgreSQL) y de artefactos (sistema de ficheros, S3, Azure Blob, Google Cloud Storage). Se integra fácilmente con frameworks como scikit-learn, TensorFlow y PyTorch, y permite registrar, comparar y desplegar modelos de forma reproducible.
+ 
+## Configuración básica en un cuaderno Jupyter
+
+Ejemplo mínimo para conectar y usar un servidor MLflow desde un notebook Jupyter. Ajuste URIs, credenciales y nombres de experimentos según su entorno.
+
+```python
+# Instalar (si es necesario)
+!pip install --quiet mlflow
+
+import os
+import mlflow
+
+# URI del servidor MLflow (puede ser http://host:5000 o la ruta local de archivos)
+mlflow.set_tracking_uri("http://mlflow-server:5000")
+
+# Nombre del experimento (se crea si no existe)
+mlflow.set_experiment("mi_experimento")
+
+# Ejemplo de variables de entorno para almacenamiento de artefactos en la nube
+# Para AWS S3:
+os.environ.setdefault("AWS_ACCESS_KEY_ID", "<TU_AWS_KEY>")
+os.environ.setdefault("AWS_SECRET_ACCESS_KEY", "<TU_AWS_SECRET>")
+
+# Para Google Cloud Storage:
+# os.environ.setdefault("GOOGLE_APPLICATION_CREDENTIALS", "/ruta/a/credenciales.json")
+
+# Para Azure Blob:
+# os.environ.setdefault("AZURE_STORAGE_CONNECTION_STRING", "DefaultEndpointsProtocol=...;")
+
+# Uso básico: abrir una corrida y registrar parámetros/métricas
+with mlflow.start_run():
+    mlflow.log_param("alpha", 0.1)
+    mlflow.log_metric("accuracy", 0.95)
+    # mlflow.sklearn.log_model(model, "modelo")  # registrar modelo tras entrenarlo
+
+```
+
+
+
 <figure style="align: center;">
     <img src="./images/herramientas.png">
     <figcaption>Herramientas MLOps</figcaption>
 </figure>
+
